@@ -1,0 +1,78 @@
+/* ============================================================
+   Tarjetas de "Nuestras principales herramientas son:"
+   Las fotos de archivo se reemplazan por una animación que
+   muestra qué hace cada modelo. El texto queda abajo.
+   ============================================================ */
+
+/* La foto se apaga desde el CSS, no desde el JS: así la tarjeta
+   nunca alcanza a mostrarla mientras carga la animación. */
+#simulation-tools-our-tools article {
+  background-image: none !important;
+  background: linear-gradient(170deg, #0C2E3C 0%, #08202C 46%, #071828 100%) !important;
+  border: 1px solid rgba(255,255,255,.11);
+  padding: 0 !important;
+  overflow: hidden;
+  transition: border-color .35s ease-out, transform .35s ease-out, box-shadow .35s ease-out;
+}
+#simulation-tools-our-tools article:hover {
+  border-color: rgba(231,200,115,.5);
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(0,0,0,.4);
+}
+/* el velo en degradado que llevaba la foto ya no hace falta */
+#simulation-tools-our-tools article > div[class*="inset-0"] { display: none !important; }
+#simulation-tools-our-tools article > h3 { margin: 0 0 8px !important; padding: 0 24px; }
+#simulation-tools-our-tools article > p  { padding: 0 24px; }
+/* el CTA se pega abajo para que las tres tarjetas tengan el mismo ritmo,
+   aunque ARGOS no tenga página propia */
+#simulation-tools-our-tools article > .am-tool-cta { margin: 18px 24px 26px; margin-top: auto; }
+#simulation-tools-our-tools article > p { margin-bottom: 26px; }
+
+/* ---------- panel de la animación ---------- */
+.tc-viz { position: relative; padding: 20px 16px 14px; }
+.tc-viz::after {                         /* funde el panel con el cuerpo, sin tapar los rótulos */
+  content: ""; position: absolute; inset: auto 0 0 0; height: 18px;
+  background: linear-gradient(180deg, rgba(7,24,40,0), rgba(7,24,40,.85));
+  pointer-events: none;
+}
+.tc-svg { display: block; width: 100%; height: auto; }
+
+/* ---------- animaciones ---------- */
+@keyframes tc-bar   { 0%,4% { transform: scaleY(0); } 16%,88% { transform: scaleY(1); }
+                      100%  { transform: scaleY(0); } }
+@keyframes tc-scan  { 0% { transform: translateX(0); opacity: 0; }
+                      8% { opacity: .55; }
+                      92% { opacity: .55; }
+                      100% { transform: translateX(288px); opacity: 0; } }
+@keyframes tc-draw  { 0%,10% { stroke-dashoffset: var(--len,600); }
+                      55%,90% { stroke-dashoffset: 0; }
+                      100% { stroke-dashoffset: var(--len,600); } }
+@keyframes tc-soc   { 0%,10%  { transform: translateY(74%); }
+                      40%,52% { transform: translateY(4%); }
+                      82%,100%{ transform: translateY(74%); } }
+@keyframes tc-agent { 0%,52%,100% { r: 6; fill: #B2CED4; }
+                      12%,36%     { r: 9; fill: #E7C873; } }
+@keyframes tc-drop  { 0%,6%   { opacity: 0; stroke-dashoffset: 60; }
+                      16%,30% { opacity: .9; stroke-dashoffset: 0; }
+                      46%,100%{ opacity: 0; } }
+@keyframes tc-grow  { 0%,4% { transform: scaleY(0); } 14%,92% { transform: scaleY(1); }
+                      100%  { transform: scaleY(0); } }
+
+.tc-bar   { transform-origin: bottom; transform: scaleY(0);
+            animation: tc-bar 7s cubic-bezier(.22,.8,.28,1) infinite; }
+.tc-scan  { animation: tc-scan 7s linear infinite; }
+.tc-line  { stroke-dasharray: var(--len, 600); stroke-dashoffset: var(--len, 600);
+            animation: tc-draw 7s ease-in-out infinite; }
+.tc-soc   { animation: tc-soc 7s ease-in-out infinite; }
+.tc-agent { animation: tc-agent 4.4s ease-in-out infinite; }
+.tc-drop  { stroke-dasharray: 60; animation: tc-drop 4.4s ease-in-out infinite; }
+.tc-grow  { transform-origin: bottom; transform: scaleY(0);
+            animation: tc-grow 4.4s cubic-bezier(.22,.8,.28,1) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tc-bar, .tc-grow { transform: scaleY(1); animation: none; }
+  .tc-line { stroke-dashoffset: 0; animation: none; }
+  .tc-scan, .tc-drop { display: none; }
+  .tc-soc { transform: translateY(30%); animation: none; }
+  .tc-agent { animation: none; }
+}

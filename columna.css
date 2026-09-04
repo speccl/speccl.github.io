@@ -1,0 +1,280 @@
+/* ============================================================
+   COLUMNAS — hoja de estilos
+   Comparte los tokens del sitio (ver ameba.css) y agrega lo
+   propio de la columna de opinión. Namespace .co-*
+   ============================================================ */
+
+:root {
+  --co-ink:     #071828;
+  --co-ink-2:   #05121E;
+  --co-teal:    #066174;
+  --co-teal-l:  #4E93A6;
+  --co-teal-d:  #032931;
+  --co-gold:    #E7C873;
+  --co-pale:    #E8F4F6;
+  --co-border:  #E6E8EA;
+  --co-grey:    #636363;
+  --co-steel:   #9FBAC7;
+
+  --co-r:   24px;
+  --co-r-s: 14px;
+  --co-sh:   0 2px 8px rgba(99,99,99,.2);
+  --co-sh-h: 0 18px 44px rgba(7,24,40,.16);
+  --co-ease: cubic-bezier(.22,.8,.28,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; color: var(--co-ink); background: #fff;
+       font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
+       -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img, svg { max-width: 100%; }
+
+.co-skip { position: absolute; left: -9999px; }
+.co-skip:focus { left: 20px; top: 20px; z-index: 99; background: #fff; color: var(--co-ink);
+                 padding: 10px 16px; border-radius: 8px; }
+
+/* ---------- reveal ----------
+   El estado oculto va colgado de .js, que pone un script en línea apenas se
+   parsea el <head>. Sin JS —o si el script falla— el artículo se muestra
+   entero en vez de quedar en blanco: son mil quinientas palabras, no una
+   tarjeta decorativa. */
+.js .co-r { opacity: 0; transform: translateY(24px);
+            transition: opacity .8s var(--co-ease), transform .8s var(--co-ease); }
+.js .co-r.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .co-r { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============================================================
+   HERO
+   Editorial, no de producto: el peso está en el titular y la
+   firma. El canvas de la derecha dibuja las dos trayectorias
+   del modelo, que es de lo que trata la columna.
+   ============================================================ */
+.co-hero { position: relative; min-height: 100svh; display: flex; flex-direction: column;
+           justify-content: center; padding: 112px 20px 66px; color: #fff;
+           background: radial-gradient(120% 90% at 76% 14%, #0B3341 0%, #071828 46%, #05121E 100%); }
+@media (min-width: 640px)  { .co-hero { padding-inline: var(--smpx-section); } }
+@media (min-width: 1024px) { .co-hero { padding-inline: var(--lgpx-section); } }
+@media (min-width: 1536px) { .co-hero { padding-inline: var(--2xlpx-section); } }
+
+.co-hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+/* El velo protege la lectura del titular, pero pasado el ancho de la columna
+   de texto tiene que soltar: a .42 en el 64% el dorado del gráfico se lavaba
+   hacia un caqui apagado. La caída se adelanta y se profundiza. */
+.co-hero-veil { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(100deg, rgba(5,18,30,.96) 0%, rgba(5,18,30,.88) 36%,
+                                      rgba(5,18,30,.24) 62%, rgba(5,18,30,.02) 84%); }
+/* En pantalla angosta el gráfico no cabe ni se lee, y velado a medias se
+   transparenta detrás del texto como una trama sucia. Se apaga del todo y
+   queda sólo el fondo. */
+@media (max-width: 900px) {
+  .co-hero canvas { display: none; }
+  .co-hero-veil { background: linear-gradient(180deg, rgba(5,18,30,.35) 0%,
+                                                      rgba(5,18,30,0) 45%); }
+}
+.co-hero-in { position: relative; z-index: 2; max-width: 800px; }
+
+/* franja vertical dorada: marca de columna firmada */
+.co-hero-in::before {
+  content: ""; position: absolute; left: -22px; top: 4px; bottom: 4px; width: 2px;
+  background: linear-gradient(180deg, var(--co-gold) 0%, rgba(231,200,115,.05) 100%);
+}
+@media (max-width: 1023px) { .co-hero-in::before { display: none; } }
+
+.co-eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 6px 15px;
+              border-radius: 999px; border: 1px solid rgba(231,200,115,.42);
+              background: rgba(231,200,115,.08); color: var(--co-gold);
+              font-size: 12px; font-weight: 700; letter-spacing: .13em;
+              text-transform: uppercase; margin: 0 0 20px; }
+.co-eyebrow i { width: 7px; height: 7px; border-radius: 50%; background: var(--co-gold); }
+
+.co-hero h1 { font-size: clamp(40px, 6.6vw, 82px); line-height: 1.02; font-weight: 800;
+              letter-spacing: -.032em; margin: 0 0 18px; text-wrap: balance; }
+.co-grad { background: linear-gradient(96deg, #FFF 6%, var(--co-pale) 40%, var(--co-gold) 98%);
+           -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.co-hero-sub { font-size: clamp(18px, 2vw, 24px); line-height: 1.42; font-weight: 600;
+               color: #EAF3F5; margin: 0 0 14px; max-width: 40ch; }
+.co-hero-q { font-size: clamp(15px, 1.3vw, 17.5px); line-height: 1.65; color: #B7CAD1;
+             margin: 0 0 26px; max-width: 60ch; }
+.co-hero-q b { color: #fff; font-weight: 600; }
+
+/* ---------- firma ---------- */
+.co-by { display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+         margin: 0 0 26px; }
+.co-by-av { width: 46px; height: 46px; border-radius: 50%; flex: none;
+            display: grid; place-items: center; font-weight: 800; font-size: 15px;
+            letter-spacing: .02em; color: var(--co-ink);
+            background: linear-gradient(140deg, var(--co-gold) 0%, #C9A94D 100%);
+            box-shadow: 0 0 0 1px rgba(231,200,115,.35), 0 0 0 6px rgba(231,200,115,.08); }
+/* retrato: mismo circulo que las iniciales, recortado al cuadro */
+img.co-by-av { object-fit: cover; display: block; }
+.co-by-avlink { display: block; flex: none; border-radius: 50%;
+                transition: transform .25s var(--co-ease, cubic-bezier(.22,1,.36,1)),
+                            box-shadow .25s var(--co-ease, cubic-bezier(.22,1,.36,1)); }
+.co-by-avlink:hover, .co-by-avlink:focus-visible { transform: translateY(-1px) scale(1.04); }
+.co-by-avlink:hover .co-by-av, .co-by-avlink:focus-visible .co-by-av {
+  box-shadow: 0 0 0 1px rgba(231,200,115,.6), 0 0 0 7px rgba(231,200,115,.16); }
+.co-by-avlink:focus-visible { outline: 2px solid var(--co-gold); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .co-by-avlink, .co-by-avlink:hover, .co-by-avlink:focus-visible { transition: none;
+                                                                    transform: none; }
+}
+
+.co-by-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.co-by-name { font-weight: 700; font-size: 15.5px; color: #fff; }
+.co-by-meta { font-size: 12.5px; color: #9FBAC7; display: flex; flex-wrap: wrap;
+              align-items: center; gap: 8px; }
+.co-by-meta span { display: inline-flex; align-items: center; gap: 8px; }
+.co-by-meta span + span::before { content: ""; width: 3px; height: 3px; border-radius: 50%;
+                                  background: rgba(159,186,199,.75); }
+
+/* ---------- botones ---------- */
+.co-btns { display: flex; flex-wrap: wrap; gap: 14px; }
+.co-btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px;
+          border-radius: 10px; font-weight: 700; line-height: 1.2;
+          border: 1px solid transparent;
+          transition: transform .25s var(--co-ease), background-color .25s,
+                      color .25s, border-color .25s; }
+.co-btn:hover { transform: translateY(-2px); }
+.co-btn svg { flex: none; }
+.co-btn-gold { background: var(--co-gold); color: var(--co-ink); }
+.co-btn-gold:hover { background: #f1da9d; }
+.co-btn-line { border-color: rgba(255,255,255,.7); color: #fff; }
+.co-btn-line:hover { background: #fff; color: var(--co-ink); }
+
+/* ---------- cifras ---------- */
+.co-hstats { display: flex; flex-wrap: wrap; gap: 12px 44px; margin-top: 34px;
+             padding-top: 24px; border-top: 1px solid rgba(255,255,255,.14); }
+.co-hstat { display: flex; flex-direction: column; gap: 3px; }
+.co-hstat b { font-size: clamp(24px, 3.1vw, 36px); line-height: 1; font-weight: 800;
+              color: var(--co-gold); letter-spacing: -.02em; }
+.co-hstat span { font-size: 12.5px; color: #A9BFC7; max-width: 24ch; line-height: 1.45; }
+
+/* pie del gráfico del hero, abajo a la derecha */
+.co-figcap { position: absolute; z-index: 2; right: 20px; bottom: 22px;
+             font-size: 11.5px; color: rgba(169,191,199,.75); letter-spacing: .02em; }
+@media (min-width: 640px)  { .co-figcap { right: var(--smpx-section); } }
+@media (min-width: 1024px) { .co-figcap { right: var(--lgpx-section); } }
+@media (min-width: 1536px) { .co-figcap { right: var(--2xlpx-section); } }
+@media (max-width: 900px)  { .co-figcap { display: none; } }
+
+/* ============================================================
+   EL ARTÍCULO
+   Va sobre fondo claro: el hero es oscuro porque es una portada,
+   pero mil quinientas palabras en blanco sobre tinta cansan.
+   Una sola columna medida en ch, que es lo que fija el largo de
+   línea legible con independencia del tamaño de la fuente.
+   ============================================================ */
+.co-s { background: linear-gradient(180deg, #FFF 0%, #F7F8F8 100%);
+        padding: 80px 20px 96px; }
+@media (min-width: 640px)  { .co-s { padding-inline: var(--smpx-section); } }
+@media (min-width: 1024px) { .co-s { padding: 104px var(--lgpx-section) 120px; } }
+@media (min-width: 1536px) { .co-s { padding-inline: var(--2xlpx-section); } }
+
+.co-art { max-width: 68ch; margin-inline: auto; }
+
+.co-h2 { font-size: clamp(24px, 3vw, 34px); line-height: 1.18; font-weight: 700;
+         letter-spacing: -.02em; margin: 56px 0 18px; text-wrap: balance;
+         color: var(--co-ink); }
+.co-art > .co-h2:first-child { margin-top: 0; }
+/* la marca dorada del encabezado, igual que el kicker de las otras páginas */
+.co-h2::before { content: ""; display: block; width: 32px; height: 3px; border-radius: 2px;
+                 background: var(--co-gold); margin-bottom: 16px; }
+
+.co-p { font-size: 17.5px; line-height: 1.72; margin: 0 0 20px; color: #24323E; }
+.co-p b { font-weight: 700; color: var(--co-ink); }
+.co-p a { color: var(--co-teal); text-decoration: underline; text-underline-offset: 2px; }
+
+/* cifra destacada: corta la lectura y deja el número solo */
+.co-dato { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
+           margin: 34px 0; padding: 22px 26px; border-radius: var(--co-r-s);
+           background: var(--co-pale); border-left: 3px solid var(--co-teal); }
+.co-dato b { font-size: clamp(30px, 4.4vw, 44px); line-height: 1; font-weight: 800;
+             letter-spacing: -.03em; color: var(--co-teal); }
+.co-dato span { flex: 1 1 260px; font-size: 14.5px; line-height: 1.5; color: #44555F; }
+
+/* cita textual */
+.co-cita { margin: 36px 0; padding: 0 0 0 24px; border-left: 3px solid var(--co-gold); }
+.co-cita blockquote { margin: 0 0 12px; font-size: clamp(19px, 2.2vw, 23px); line-height: 1.45;
+                      font-weight: 600; color: var(--co-ink); font-style: italic; }
+.co-cita blockquote::before { content: "\201C"; }
+.co-cita blockquote::after  { content: "\201D"; }
+.co-cita figcaption { font-size: 13px; line-height: 1.5; color: var(--co-grey); }
+
+.co-lista { margin: 4px 0 24px; padding: 0; list-style: none; counter-reset: co-n; }
+.co-lista li { position: relative; counter-increment: co-n; padding: 0 0 0 44px;
+               margin-bottom: 18px; font-size: 17px; line-height: 1.65; color: #24323E; }
+.co-lista li::before { content: counter(co-n); position: absolute; left: 0; top: 1px;
+                       width: 28px; height: 28px; border-radius: 50%; display: grid;
+                       place-items: center; font-size: 13px; font-weight: 800;
+                       color: #fff; background: var(--co-teal); }
+.co-lista li b { font-weight: 700; color: var(--co-ink); }
+
+/* La tabla se sale un poco de la medida del texto —cabe sin partir los
+   encabezados— y en angosto se desliza sola en vez de deformar la columna. */
+.co-tabla { margin: 30px 0 26px; }
+.co-tabla-sc { overflow-x: auto; }
+@media (min-width: 1100px) { .co-tabla { margin-inline: -52px; } }
+.co-tabla figcaption { margin-top: 10px; font-size: 12.5px; line-height: 1.5;
+                       color: var(--co-grey); }
+@media (min-width: 1100px) { .co-tabla figcaption { margin-inline: 52px; } }
+.co-tabla table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: 14.5px; }
+.co-tabla th, .co-tabla td { padding: 11px 14px; text-align: right;
+                             border-bottom: 1px solid var(--co-border); }
+.co-tabla th:first-child, .co-tabla td:first-child { text-align: left; }
+.co-tabla thead th { font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+                     color: var(--co-grey); font-weight: 700; border-bottom-color: #C9D2D6; }
+.co-tabla tbody tr:last-child td { border-bottom: 0; color: var(--co-grey); }
+.co-tabla tbody td:first-child { font-weight: 600; color: var(--co-ink); }
+
+/* tarjeta al simulador */
+.co-cta { margin: 44px 0; padding: 30px; border-radius: var(--co-r);
+          background: linear-gradient(150deg, var(--co-ink) 0%, var(--co-teal-d) 100%);
+          color: #fff; box-shadow: var(--co-sh); }
+.co-cta h3 { margin: 0 0 10px; font-size: 22px; font-weight: 700; }
+.co-cta p { margin: 0 0 22px; font-size: 15.5px; line-height: 1.6; color: #C6D6DA; }
+
+/* acotación de método, al cierre */
+.co-nota { margin: 48px 0 0; padding: 22px 24px; border-radius: var(--co-r-s);
+           background: #F0F2F3; border: 1px solid var(--co-border);
+           font-size: 13.5px; line-height: 1.62; color: #4A5A63; }
+.co-nota b { color: var(--co-ink); }
+
+@media (max-width: 640px) {
+  .co-p { font-size: 16.5px; }
+  .co-dato { padding: 18px 20px; gap: 12px; }
+  .co-cta { padding: 24px; }
+}
+
+/* ------------------------------------------------------------
+   Portátil de 13": el hero completo —titular, firma, botones y
+   cifras— tiene que caber sin desplazarse. Con los tamaños de
+   pantalla alta las cifras quedaban bajo el pliegue. Va por alto
+   de ventana, que es la restricción real, y no por ancho.
+   ------------------------------------------------------------ */
+@media (min-width: 1024px) and (max-height: 900px) {
+  .co-hero { padding-top: 96px; padding-bottom: 52px; }
+  .co-eyebrow { margin-bottom: 16px; }
+  .co-hero h1 { font-size: clamp(38px, 4.6vw, 62px); margin-bottom: 14px; }
+  .co-hero-sub { font-size: clamp(17px, 1.5vw, 21px); margin-bottom: 12px; }
+  .co-hero-q { font-size: 15.5px; margin-bottom: 20px; }
+  .co-by { margin-bottom: 20px; }
+  .co-hstats { margin-top: 26px; padding-top: 20px; }
+  .co-hstat b { font-size: 30px; }
+}
+
+/* ------------------------------------------------------------
+   Teléfono
+   ------------------------------------------------------------ */
+@media (max-width: 640px) {
+  .co-hero h1 { font-size: clamp(36px, 9.2vw, 46px); }
+  .co-hero-sub { font-size: 18px; }
+  /* con los separadores en línea, un salto de línea deja el punto colgando
+     al principio de la segunda: en angosto la firma se apila */
+  .co-by-meta { flex-direction: column; align-items: flex-start; gap: 3px; }
+  .co-by-meta span + span::before { content: none; }
+  .co-btns .co-btn { flex: 1 1 100%; justify-content: center; }
+}

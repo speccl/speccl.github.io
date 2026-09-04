@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ABEX | Agent-based expansion model | SPEC</title>
+<meta name="description" content="ABEX projects the works plan by simulating each market player's decision — expectations, portfolio and contracts — instead of solving a least-cost problem."/>
+<link rel="alternate" hreflang="es" href="/es/herramientas-de-simulacion/abex"/>
+<link rel="alternate" hreflang="en" href="/en/herramientas-de-simulacion/abex"/>
+<meta property="og:title" content="ABEX | Agent-based expansion model | SPEC"/>
+<meta property="og:description" content="ABEX projects the works plan by simulating each market player's decision — expectations, portfolio and contracts — instead of solving a least-cost problem."/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"/>
+<link rel="stylesheet" href="/_next/static/css/f7f205799a6887af.css"/>
+<link rel="stylesheet" href="/ameba.css"/>   <!-- nav, menú móvil y footer compartidos -->
+<link rel="stylesheet" href="/abex.css"/>
+</head>
+<body class="__variable_188709 __variable_9a8899 antialiased">
+<a class="ab-skip" href="#ab-main">Skip to content</a>
+<nav class="fixed w-full z-50 px-5 py-5 transition-colors duration-300 shadow-[0px_1px_4px_0px_#00000029] text-white bg-white/2 sm:px-[var(--smpx-section)] lg:px-[50px] xl:px-[var(--lgpx-section)] 2xl:px-[var(--2xlpx-section)]"><div class="flex justify-between xl:min-w-[923px]"><a class="self-center" href="/en"><img alt="SPEC" width="80" height="24.66" class="self-center xl:w-[120] xl:h-[36.99]" src="/logo-white.svg"/></a><div class="flex"><ul class="gap-5 relative self-center leading-6 hidden lg:flex"><li class="relative group am-nav-group"><button class="flex gap-1 uppercase" type="button"><p class="relative animate-underline">Areas of expertise</p><img alt="" width="16.5" height="9" class="self-center" src="/menu-arrow.svg"/></button><ul class="w-max rounded-[12px] absolute left-0 -mt-2 pt-2 opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50 leading-6 text-[#071828] shadow-[0px_1px_4px_0px_#00000029]"><li class="bg-white hover:bg-gray-100 cursor-pointer rounded-t-[12px] border-b border-[#E6E8EA]"><a href="/en/inteligencia-de-mercado"><p class="px-3 py-2">Market Intelligence</p></a></li><li class="bg-white hover:bg-gray-100 cursor-pointer "><a href="/en/estrategia-y-regulacion"><p class="px-3 py-2">Strategy and Regulation</p></a></li><li class="bg-white hover:bg-gray-100 cursor-pointer rounded-b-[12px] border-t border-[#E6E8EA]"><a href="/en/herramientas-de-simulacion"><p class="px-3 py-2">Simulation Tools</p></a></li></ul></li><li class="relative group am-nav-group"><button class="flex gap-1 uppercase" type="button"><p class="relative animate-underline">Software</p><img alt="" width="16.5" height="9" class="self-center" src="/menu-arrow.svg"/></button><ul class="w-max rounded-[12px] absolute left-0 -mt-2 pt-2 opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50 leading-6 text-[#071828] shadow-[0px_1px_4px_0px_#00000029]"><li class="bg-white hover:bg-gray-100 cursor-pointer rounded-t-[12px] border-b border-[#E6E8EA]"><a href="/en/herramientas-de-simulacion/ameba"><p class="px-3 py-2">AMEBA</p></a></li><li class="bg-white hover:bg-gray-100 cursor-pointer "><a href="/en/herramientas-de-simulacion/abex"><p class="px-3 py-2">ABEX</p></a></li><li class="bg-white hover:bg-gray-100 cursor-pointer rounded-b-[12px] border-t border-[#E6E8EA]"><a href="/en/herramientas-de-simulacion/galilei"><p class="px-3 py-2">Galilei</p></a></li></ul></li><li class="relative group am-nav-group"><button class="flex gap-1 uppercase" type="button"><p class="relative animate-underline">About Us</p><img alt="" width="16.5" height="9" class="self-center" src="/menu-arrow.svg"/></button><ul class="w-max rounded-[12px] absolute left-0 -mt-2 pt-2 opacity-0 invisible transition-all duration-300 transform translate-y-2 z-50 leading-6 text-[#071828] shadow-[0px_1px_4px_0px_#00000029]"><li class="bg-white hover:bg-gray-100 cursor-pointer rounded-t-[12px] border-b border-[#E6E8EA]"><a href="/en/quienes-somos"><p class="px-3 py-2">Who We Are</p></a></li><li class="bg-white hover:bg-gray-100 cursor-pointer "><a href="/en/nuestro-equipo"><p class="px-3 py-2">Our Team</p></a></li><li class="bg-white hover:bg-gray-100 cursor-pointer "><a href="/en/publicaciones"><p class="px-3 py-2">Publications</p></a></li><li class="bg-white hover:bg-gray-100 cursor-pointer rounded-b-[12px] border-t border-[#E6E8EA]"><a href="/en/seguridad-de-informacion"><p class="px-3 py-2">Information Security</p></a></li></ul></li><li><a class="uppercase cursor-pointer" href="mailto:info@spec.cl"><p class="relative animate-underline">Contact Us</p></a></li></ul><section aria-label="Switch language" data-lang-switch class="flex items-center border rounded-[4px] px-2 ml-5 gap-1 transition-all duration-300 ease-out h-16 border-white cursor-pointer"><img alt="" width="20" height="20" class="self-center" src="/globe-outline.svg"/><p class="uppercase self-center px-[3px] text-white">EN</p><span data-lang-slot class="overflow-hidden transition-all duration-500 ease-out" style="max-width:0;opacity:0;transform:translateX(-4px)"><a href="/es/herramientas-de-simulacion/abex" class="uppercase px-[3px] py-[1px] rounded text-white transition-colors duration-200 cursor-pointer hover:bg-white/10">ES</a></span></section><button type="button" data-menu-open class="flex justify-between cursor-pointer gap-3 self-center"><div class="flex gap-3 ml-5 lg:hidden"><p class="self-center">Menu</p><img alt="Menu" width="24" height="24" class="self-center" src="/menu-button.svg"/></div></button></div></div></nav>
+<div class="am-mobile" data-open="false" role="dialog" aria-modal="true" aria-label="Menu"><div class="am-mobile-top"><a href="/en"><img alt="SPEC" width="120" height="36.99" src="/logo-white.svg"/></a><button type="button" data-menu-close style="display:flex;gap:12px;align-items:center;background:none;border:0;color:#fff;font:inherit;font-size:18px;cursor:pointer">Close<img alt="" width="24" height="24" src="/menu-x.svg"/></button></div><ul class="am-mobile-list"><li><button type="button" data-submenu="am-sub-1">Areas of expertise<svg class="am-mobile-chev" width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true"><path d="M1 1l8 8 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="am-mobile-sub" id="am-sub-1"><li><a href="/en/inteligencia-de-mercado">Market Intelligence</a></li><li><a href="/en/estrategia-y-regulacion">Strategy and Regulation</a></li><li><a href="/en/herramientas-de-simulacion">Simulation Tools</a></li></ul></li><li><button type="button" data-submenu="am-sub-2">Software<svg class="am-mobile-chev" width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true"><path d="M1 1l8 8 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="am-mobile-sub" id="am-sub-2"><li><a href="/en/herramientas-de-simulacion/ameba">AMEBA</a></li><li><a href="/en/herramientas-de-simulacion/abex">ABEX</a></li><li><a href="/en/herramientas-de-simulacion/galilei">Galilei</a></li></ul></li><li><button type="button" data-submenu="am-sub-3">About Us<svg class="am-mobile-chev" width="18" height="10" viewBox="0 0 18 10" fill="none" aria-hidden="true"><path d="M1 1l8 8 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><ul class="am-mobile-sub" id="am-sub-3"><li><a href="/en/quienes-somos">Who We Are</a></li><li><a href="/en/nuestro-equipo">Our Team</a></li><li><a href="/en/publicaciones">Publications</a></li><li><a href="/en/seguridad-de-informacion">Information Security</a></li></ul></li><li><a href="mailto:info@spec.cl">Contact Us</a></li></ul></div>
+<main id="ab-main">
+
+<!-- ======================= HERO ======================= -->
+<header class="ab-hero">
+  <canvas id="ab-agents" aria-hidden="true"></canvas>
+  <div class="ab-hero-veil"></div>
+  <div class="ab-hero-in">
+    <nav class="am-crumbs am-up" aria-label="breadcrumb" style="margin-bottom:26px">
+      <a href="/en">&#8962;</a><span>/</span>
+      <a href="/en/herramientas-de-simulacion">Simulation Tools</a><span>/</span>
+      <span class="am-current" aria-current="page">ABEX</span>
+    </nav>
+    <p class="ab-eyebrow am-up" style="animation-delay:.05s"><i></i>A new planning paradigm</p>
+    <h1 class="am-up" style="animation-delay:.15s"><span class="ab-grad">ABEX</span></h1>
+    <p class="ab-hero-sub am-up" style="animation-delay:.25s">Generation expansion simulated agent by agent</p>
+    <p class="ab-hero-q am-up" style="animation-delay:.35s">Are we planning the system that will <b>actually get built</b>?</p>
+    <div class="ab-btns am-up" style="animation-delay:.45s">
+      <a class="ab-btn ab-btn-gold" href="#ab-why">Why today's model fails</a>
+      <a class="ab-btn ab-btn-line" href="mailto:info@spec.cl?subject=ABEX%20enquiry">Talk to us</a>
+    </div>
+  </div>
+  <div class="am-cue" aria-hidden="true"><i></i>Scroll</div>
+</header>
+
+<!-- ======================= SUPUESTO vs REALIDAD ======================= -->
+<section class="ab-s ab-deep" id="ab-why">
+  <div class="ab-r ab-center ab-measure" style="margin-bottom:48px">
+    <p class="ab-kicker">Why it fails</p>
+    <h2 class="ab-h2">A model that optimizes the system cannot anticipate someone chasing returns</h2>
+    <p class="ab-lead">Planning has rested on centralized models: a plant enters when its investment is justified by the reduction in system operating costs. The problem is not the data, nor how those models are solved, but the assumption of who decides and why.</p>
+  </div>
+  <div class="ab-vs">
+    <div class="ab-vs-col ab-vs-a ab-r"><p class="ab-vs-h">What the centralized model assumes</p><ul><li>Investment is justified by the reduction in system operating costs.</li><li>Only what belongs to the least-total-cost solution gets built.</li><li>Entry happens at the optimal moment defined by the planner.</li></ul></div>
+    <div class="ab-vs-mid ab-r" data-d="80"><span>VS</span></div>
+    <div class="ab-vs-col ab-vs-b ab-r" data-d="140"><p class="ab-vs-h">What actually happens in the market</p><ul><li>Nobody invests to minimize system cost: they invest for expected profitability.</li><li>Without a PPA there is no financial close, however «optimal» the project is for the system.</li><li>Timing is set by auctions, financing and portfolio strategy.</li></ul></div>
+  </div>
+  <p class="ab-lead ab-r ab-center ab-measure" style="margin-top:36px">On top of that come assumptions of perfect rationality, full coordination and no market failures; and a technological and contractual homogeneity that ignores the diversity of preferences, contracts and practical constraints in the market.</p>
+</section>
+
+<!-- ======================= DRIVERS ======================= -->
+<section class="ab-s ab-light">
+  <div class="ab-r" style="max-width:820px;margin-bottom:44px">
+    <p class="ab-kicker">How ABEX decides</p>
+    <h2 class="ab-h2">It does not minimize costs: it simulates each agent's decision</h2>
+    <p class="ab-lead">The works plan is built by simulating each player's decision, with its own policies, instead of solving a single least-cost problem.</p>
+  </div>
+  <div class="ab-grid ab-g2"><article class="ab-card ab-r" data-d="0"><svg class="am-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="24" class="am-icon-bg"/><circle cx="24" cy="15" r="2.6" class="am-icon-fg"/><circle cx="15" cy="31" r="2.6" class="am-icon-fg"/><circle cx="33" cy="31" r="2.6" class="am-icon-fg"/><path d="M24 17.6 16.2 28.8M24 17.6l7.8 11.2M17.6 31h12.8" class="am-icon-line"/></svg><h3 class="ab-h3" style="margin-top:18px">Market operator</h3><p>Investing is assessed against market expectations: system operation and the future prices each developer expects, with congestion and zonal decoupling.</p></article><article class="ab-card ab-r" data-d="90"><svg class="am-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="24" class="am-icon-bg"/><circle cx="19.5" cy="20" r="3.6" class="am-icon-line"/><circle cx="29.5" cy="21.5" r="3" class="am-icon-line"/><path d="M13 32a6.5 6.5 0 0 1 13 0M28 26.5a6 6 0 0 1 6.5 5.5" class="am-icon-line"/></svg><h3 class="ab-h3" style="margin-top:18px">Generators and retailers</h3><p>Each project is assessed by its effect on the agent's portfolio — profit and risk — not by its contribution to system cost. Asymmetric profitability across companies determines who builds.</p></article><article class="ab-card ab-r" data-d="180"><svg class="am-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="24" class="am-icon-bg"/><path d="M17 13h10l5 5v17H17z" class="am-icon-line"/><path d="M27 13v5h5" class="am-icon-line"/><path d="M21 27c2-3 3.5-3 5 0s2.5 3 4 1" class="am-icon-line"/></svg><h3 class="ab-h3" style="margin-top:18px">Contracts as the driver</h3><p>The PPA is the bankability condition: projects materialize when they secure contracts, not when an optimizer declares them efficient.</p></article><article class="ab-card ab-r" data-d="270"><svg class="am-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="24" class="am-icon-bg"/><path d="M14 18h20M14 24h20M14 30h20" class="am-icon-line"/><circle cx="20" cy="18" r="3" class="am-icon-fg"/><circle cx="29" cy="24" r="3" class="am-icon-fg"/><circle cx="23" cy="30" r="3" class="am-icon-fg"/></svg><h3 class="ab-h3" style="margin-top:18px">Real preferences</h3><p>Technology, banking and auction preferences, learned from a decade observing the market.</p></article></div>
+</section>
+
+<!-- ======================= TABLA ======================= -->
+<section class="ab-s ab-white">
+  <div class="ab-r" style="max-width:820px;margin-bottom:40px">
+    <p class="ab-kicker">Comparison</p>
+    <h2 class="ab-h2">What should be built, or what will be built</h2>
+    <p class="ab-lead">Neither replaces the other. The centralized model remains the efficiency benchmark; ABEX tells you the system you will have to operate, contract and compete in.</p>
+  </div>
+  <div class="ab-tablewrap ab-r">
+    <div class="ab-tablescroll">
+      <table class="ab-table">
+        <thead><tr><th></th><th>Centralized model</th><th>Agent-based model</th></tr></thead>
+        <tbody><tr><th>Who decides?</th><td>A central planner</td><td>Market operator, generators and demand</td></tr><tr><th>Investment driver</th><td>Least system cost</td><td>Price expectations and contracts</td></tr><tr><th>Decision inputs</th><td>Costs and availability</td><td>Contracts, portfolios, expectations, competition</td></tr><tr><th>Entry condition</th><td>Optimal moment for the system</td><td>Contract award and financial feasibility</td></tr><tr><th>Results</th><td>Works plan and costs</td><td>Works, contracts, prices, tariffs and commercial balance</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+  <p class="ab-tablehint">→ Swipe the table to see the agent-based column.</p>
+  <p class="ab-punch ab-r">The centralized model answers <b>what should be built</b>. The agent-based model answers <b>what will be built</b>.</p>
+</section>
+
+<!-- ======================= TRES MODULOS (scrollytelling) ======================= -->
+<section class="ab-s ab-dark" id="ab-modules">
+  <div class="ab-r" style="max-width:820px;margin-bottom:16px">
+    <p class="ab-kicker">Methodology</p>
+    <h2 class="ab-h2">Three integrated modules</h2>
+    <p class="ab-lead">They reproduce the interaction between system operation, investment decisions and contract formation.</p>
+  </div>
+  <div class="ab-scrolly">
+    <div class="ab-steps"><div class="ab-step" data-step="0"><span class="ab-step-n">1</span><h3>Electricity market simulation</h3><p>An investment model produces the price and generation projections. This is where the <b>market expectations</b> that guide the agents are set.</p></div><div class="ab-step" data-step="1"><span class="ab-step-n">2</span><h3>Bid creation through the optimal portfolio</h3><p>Each agent builds its energy and price bids with a <b>portfolio optimization model</b>. This is where individual strategic decisions on investment and contracting come in.</p></div><div class="ab-step" data-step="2"><span class="ab-step-n">3</span><h3>Supply contract award</h3><p>Bids are matched, contracts awarded, and the new works enter the expansion plan. That is how the <b>endogenous evolution</b> of the market emerges.</p></div></div>
+    <div class="ab-sticky">
+      <figure class="ab-fig ab-r" style="margin:0"><div class="ab-pipe" role="img" aria-label="The three modules chained together: market simulation, portfolio model and matching model, with the new works feeding back"><div class="ab-pipe-stack"><div class="ab-pipe-node ab-node" data-mod="0">Electricity market simulation</div><div class="ab-pipe-arrow ab-edge" data-edge="0" aria-hidden="true"></div><div class="ab-pipe-node is-out ab-node" data-mod="0">Price and generation projections</div><div class="ab-pipe-arrow ab-edge" data-edge="0" aria-hidden="true"></div><div class="ab-pipe-node ab-node" data-mod="1">Portfolio model</div><div class="ab-pipe-arrow ab-edge" data-edge="1" aria-hidden="true"></div><div class="ab-pipe-node is-out ab-node" data-mod="1">Bid curves</div><div class="ab-pipe-arrow ab-edge" data-edge="1" aria-hidden="true"></div><div class="ab-pipe-node ab-node" data-mod="2">Matching model</div><div class="ab-pipe-arrow ab-edge" data-edge="2" aria-hidden="true"></div><div class="ab-pipe-node is-out ab-node" data-mod="2">New works</div></div><div class="ab-pipe-loop" aria-hidden="true"></div></div>
+        <figcaption class="ab-cap">The loop closes: awarded works update the expectations used to assess the next auction.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= HORIZONTE RODANTE ======================= -->
+<section class="ab-s ab-deep">
+  <div class="ab-r" style="max-width:820px;margin-bottom:40px">
+    <p class="ab-kicker">Rolling horizon</p>
+    <h2 class="ab-h2">Every auction is assessed with the information available at its time</h2>
+    <p class="ab-lead">For each auction, the Optimal Portfolio Model computes every company's bid: the minimum price (break-even) that covers the supply and keeps the project viable. If the company can cover it with energy already available, 5 USD/MWh are discounted.</p>
+  </div>
+  <div class="ab-roll ab-r" data-roll data-span="12" data-prefix="Assessment">
+    <div class="ab-years"><button type="button" class="ab-year" data-start="0" aria-pressed="false">2026</button><button type="button" class="ab-year" data-start="1" aria-pressed="false">2027</button><button type="button" class="ab-year" data-start="2" aria-pressed="false">2028</button><button type="button" class="ab-year" data-start="3" aria-pressed="false">2029</button><button type="button" class="ab-year" data-start="4" aria-pressed="false">2030</button><button type="button" class="ab-year" data-start="5" aria-pressed="false">2031</button><button type="button" class="ab-year" data-start="6" aria-pressed="false">2032</button><button type="button" class="ab-year" data-start="7" aria-pressed="false">2033</button><button type="button" class="ab-year" data-start="8" aria-pressed="false">2034</button><div class="ab-year">2035</div><div class="ab-year">2036</div><div class="ab-year">2037</div><div class="ab-year">2038</div><div class="ab-year">2039</div><div class="ab-year">2040</div><div class="ab-year">2041</div><div class="ab-year">2042</div><div class="ab-year">2043</div><div class="ab-year">2044</div><div class="ab-year">2045</div><div class="ab-win"><b></b></div></div>
+    <div class="ab-rollaxis"><span>2026</span><span>2045</span></div>
+    <p class="ab-rollhint">Click the track to pin an assessment; click again to resume the sweep.</p>
+  </div>
+  <p class="ab-lead ab-r" style="margin-top:28px;max-width:70ch">Once awarded, the company's available energy is updated and, if new projects entered, so are the market projections. Only then does the next auction begin. The scheme shows the mechanism, not an auction calendar.</p>
+</section>
+
+<!-- ======================= PREGUNTAS ======================= -->
+<section class="ab-s ab-white">
+  <div class="ab-r ab-center ab-measure" style="margin-bottom:44px">
+    <p class="ab-kicker">What it delivers</p>
+    <h2 class="ab-h2">Not just a works plan</h2>
+    <p class="ab-lead">Modelling contracts, portfolios and expectations also yields the commercial and price trajectory: one model for commercial, investment and regulatory decisions.</p>
+  </div>
+  <div class="ab-grid ab-g3"><article class="ab-card ab-r" data-d="0"><h3 class="ab-h3">Commercial position</h3><ul class="ab-qlist"><li>At what price will the next auctions be awarded?</li><li>How does my contract balance and spot exposure evolve?</li><li>When is it worth contracting and when to stay open?</li></ul></article><article class="ab-card ab-r" data-d="90"><h3 class="ab-h3">Competition and investment</h3><ul class="ab-qlist"><li>Which technology and which location are most competitive at each moment?</li><li>How do the others' strategies affect the contract price?</li><li>Where in the investment cycle are we entering?</li></ul></article><article class="ab-card ab-r" data-d="180"><h3 class="ab-h3">Regulation and public policy</h3><ul class="ab-qlist"><li>How does investment respond to a regulatory change?</li><li>What trajectory do tariffs follow?</li><li>What signal does the capacity market give?</li></ul></article></div>
+</section>
+
+<!-- ======================= CIERRE ======================= -->
+<section class="ab-s ab-dark ab-center">
+  <div class="ab-r ab-measure ab-center">
+    <h2 class="ab-h2">What will get built in your market?</h2>
+    <p class="ab-lead" style="margin-bottom:30px">Tell us what decision you have ahead — an auction, an asset purchase, a regulatory change — and we will show you what ABEX projects.</p>
+    <div class="ab-btns" style="justify-content:center">
+      <a class="ab-btn ab-btn-gold" href="mailto:info@spec.cl?subject=ABEX%20enquiry">Contact us</a>
+      <a class="ab-btn ab-btn-line" href="/en/herramientas-de-simulacion">See simulation tools</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="bg-[#071828] px-5 py-15 text-white leading-6 sm:px-[var(--smpx-section)] lg:flex lg:justify-between lg:gap-1 lg:px-[50px] xl:px-[var(--lgpx-section)] 2xl:px-[var(--2xlpx-section)]"><div class="self-center hidden lg:block"><a href="/en"><img alt="SPEC" width="120" height="36.99" class="self-center" src="/logo-white.svg"/></a></div><div class="flex justify-center mb-5 self-center lg:mb-0"><a class="flex justify-center gap-2" href="tel:+56243670192"><img alt="" width="14" height="14" class="self-center" src="/tel-icon.svg"/>+56 2 4367 0192</a></div><div class="flex justify-center mb-5 self-center lg:mb-0"><a class="flex justify-center gap-2" href="mailto:info@spec.cl"><img alt="" width="14" height="14" class="self-center" src="/envelope-icon.svg"/>info@spec.cl</a></div><div class="flex flex-col justify-center mb-5 self-center lg:mb-0"><a class="flex justify-center gap-2 lg:justify-start" href="https://maps.app.goo.gl/25n8pKtHNJLGEiKM9" target="_blank"><img alt="" width="14" height="14" class="self-center" src="/pin-icon.svg"/>Los Militares 5885, Oficina 803,</a><a class="flex justify-center gap-2 lg:justify-start lg:ml-[24px]" href="https://maps.app.goo.gl/25n8pKtHNJLGEiKM9" target="_blank">Las Condes, RM, Chile.</a></div><div class="flex justify-center"><a class="flex justify-center gap-2" href="https://www.linkedin.com/company/specenergyconsulting/" target="_blank"><svg width="41" height="40" viewBox="0 0 41 40" xmlns="http://www.w3.org/2000/svg" class="cursor-pointer group"><rect x="0.5" width="40" height="40" rx="8" class="fill-white transition-colors duration-300 ease-out group-hover:fill-[#071828]"></rect><path d="M16.4297 26.0957H13.7051V17.3359H16.4297V26.0957ZM15.0527 16.1641C14.2031 16.1641 13.5 15.4316 13.5 14.5527C13.5 13.7031 14.2031 13 15.0527 13C15.9316 13 16.6348 13.7031 16.6348 14.5527C16.6348 15.4316 15.9316 16.1641 15.0527 16.1641ZM26.5957 26.0957H23.9004V21.8477C23.9004 20.8223 23.8711 19.5332 22.4648 19.5332C21.0586 19.5332 20.8535 20.6172 20.8535 21.7598V26.0957H18.1289V17.3359H20.7363V18.5371H20.7656C21.1465 17.8633 22.0254 17.1309 23.3438 17.1309C26.0977 17.1309 26.625 18.9473 26.625 21.291V26.0957H26.5957Z" class="fill-[#071828] transition-colors duration-300 ease-out group-hover:fill-white"></path></svg></a></div></footer>
+<script src="/site-nav.js" defer></script>
+<script src="/abex.js"></script>
+</body>
+</html>

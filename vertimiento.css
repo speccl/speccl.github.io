@@ -1,0 +1,55 @@
+/* ============================================================
+   COLUMNA DE VERTIMIENTO — lo propio de las figuras
+   El hero, la tipografía del artículo y los bloques de texto
+   vienen de columna.css; esta hoja va después y solo agrega
+   el namespace .vt-*
+   ============================================================ */
+
+/* ---------- la figura ----------
+   Se sale de la medida del texto igual que las tablas: un gráfico de 24 horas
+   dentro de 68ch queda ilegible. En angosto no se encoge: se desliza. Una
+   tipografía de 11 px escalada a 330 px de ancho queda en 5. */
+.vt-fig { margin: 34px 0 30px; }
+@media (min-width: 1100px) { .vt-fig { margin-inline: -78px; } }
+
+.vt-figsc { overflow-x: auto; -webkit-overflow-scrolling: touch;
+            border-radius: var(--co-r-s); background: #fff;
+            border: 1px solid var(--co-border); padding: 14px 16px 10px; }
+.vt-svg { display: block; width: 100%; height: auto; min-width: 620px; }
+
+.vt-fig figcaption { margin-top: 11px; font-size: 12.5px; line-height: 1.55;
+                     color: var(--co-grey); display: flex; flex-wrap: wrap;
+                     align-items: baseline; gap: 6px 14px; }
+@media (min-width: 1100px) { .vt-fig figcaption { margin-inline: 78px; } }
+.vt-fig figcaption b { color: var(--co-ink); font-weight: 600; }
+.vt-glosa { flex: 1 1 300px; min-width: 0; }
+
+/* ---------- el crédito de la fuente ----------
+   Todos los datos de la columna salen de Galilei, así que la marca va al pie
+   de cada figura y no una sola vez al final: el gráfico se comparte suelto,
+   en una captura, y ahí el crédito tiene que viajar con él. */
+.vt-fuente { display: inline-flex; align-items: center; gap: 7px;
+             margin-left: auto; white-space: nowrap;
+             font-size: 11.5px; color: #7C8A93; }
+.vt-fuente img { display: block; height: 15px; width: auto; opacity: .78; }
+.vt-fuente img:hover { opacity: 1; }
+
+/* ---------- tipografía dentro del SVG ----------
+   Dos tamaños y nada más, y ninguno declarado dentro del propio SVG. `eje`
+   para toda marca de eje y anotación; `val` para el valor destacado al final
+   de una serie. Un tercer tamaño metido a mano se ve como un error de
+   maquetación. */
+.vt-ax  { font-size: 11px;   font-weight: 500; letter-spacing: .01em; }
+.vt-val { font-size: 12px;   font-weight: 700; letter-spacing: .01em; }
+.vt-svg text { font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif; }
+
+/* ---------- la tira de fuentes del cierre ---------- */
+.vt-fuentes { display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+              margin-top: 14px; padding-top: 14px;
+              border-top: 1px solid var(--co-border); }
+.vt-fuentes img { height: 20px; width: auto; opacity: .85; }
+
+@media (max-width: 640px) {
+  .vt-figsc { padding: 10px 12px 8px; }
+  .vt-fig figcaption { font-size: 12px; }
+}
