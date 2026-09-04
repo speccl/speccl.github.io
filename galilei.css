@@ -154,13 +154,6 @@ img, svg { max-width: 100%; }
              margin: 0 0 30px; max-width: 62ch; }
 .gl-hero-q b { color: #fff; font-weight: 600; }
 
-.gl-hstats { display: flex; flex-wrap: wrap; gap: 14px 44px; margin-top: 42px;
-             padding-top: 28px; border-top: 1px solid rgba(255,255,255,.14); }
-.gl-hstat { display: flex; flex-direction: column; gap: 2px; }
-.gl-hstat b { font-size: clamp(26px, 3.4vw, 40px); line-height: 1; font-weight: 800;
-              color: var(--gl-gold); letter-spacing: -.02em; }
-.gl-hstat span { font-size: 12.5px; color: #A9BFC7; max-width: 22ch; line-height: 1.45; }
-
 /* ============================================================
    DIAGRAMAS SVG
    ============================================================ */
