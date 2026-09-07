@@ -1,0 +1,5 @@
+# www.spec.cl
+User-agent: *
+Allow: /
+
+Sitemap: https://www.spec.cl/sitemap.xml
