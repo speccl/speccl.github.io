@@ -110,6 +110,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2022-almacenamiento-larga-duracion/"/>
   </url>
   <url>
+    <loc>https://www.spec.cl/en/publicaciones/2022-ruta-cero-emisiones-informe-final/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2022-ruta-cero-emisiones-informe-final/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2022-ruta-cero-emisiones-informe-final/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2022-ruta-cero-emisiones-informe-final/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/en/publicaciones/2023-acciones-sistemicas-transmision-informe-final/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
@@ -272,6 +278,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2022-almacenamiento-larga-duracion/"/>
   </url>
   <url>
+    <loc>https://www.spec.cl/es/publicaciones/2022-ruta-cero-emisiones-informe-final/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2022-ruta-cero-emisiones-informe-final/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2022-ruta-cero-emisiones-informe-final/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2022-ruta-cero-emisiones-informe-final/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision-informe-final/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
@@ -348,6 +360,9 @@
   </url>
   <url>
     <loc>https://www.spec.cl/publicaciones/2022-condiciones-habilitantes-descarbonizacion.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2022-ruta-cero-emisiones-informe-final.pdf</loc>
   </url>
   <url>
     <loc>https://www.spec.cl/publicaciones/2023-acciones-sistemicas-transmision-informe-final.pdf</loc>
