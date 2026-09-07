@@ -39,6 +39,42 @@
 }
 .sv-cta-hero:hover { background: #f0d999; }
 
+/* ----------------------------------------------------------- las secciones */
+/* El ritmo vertical y los titulos de estas paginas se definen aca y no con
+   utilidades del bundle. El CSS de Next viene COMPILADO del sitio original:
+   solo trae las clases que ese sitio llego a usar. `py-14`, `mb-3`, `mb-7`,
+   `leading-[40px]` y los `lg:text-[38px]` que pedian estas paginas nunca se
+   compilaron —no existen en la hoja— y el navegador los ignora sin avisar.
+
+   En el telefono eso dejaba las tres secciones con padding vertical CERO: el
+   titulo del cierre arrancaba pegado al borde donde cambia el color, y el
+   boton terminaba pegado al pie. En escritorio no se veia porque `lg:py-20`
+   si existe y tomaba el relevo a partir de 1024.
+
+   Los valores son los del sitio, no unos nuevos: 60px de aire (su `py-15`) y
+   80 desde 1024 (su `py-20`); el h2 de seccion en 32/40 que sube a 40/48, que
+   es el tamano de titulo del resto de las paginas. */
+.sv-sec { padding-block: 60px; }
+@media (min-width: 1024px) { .sv-sec { padding-block: 80px; } }
+
+.sv-h2 {
+  margin: 0 0 16px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+@media (min-width: 1024px) { .sv-h2 { font-size: 40px; line-height: 48px; } }
+
+/* El titulo de una banda de la prosa va un punto abajo del de seccion: abre
+   un tramo del articulo, no una pieza de la pagina. */
+.sv-h2-banda {
+  margin: 0 0 20px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 38px;
+}
+@media (min-width: 1024px) { .sv-h2-banda { font-size: 38px; line-height: 46px; } }
+
 /* -------------------------------------------------------------- las bandas */
 /* El primer diseno dejaba el texto en una columna de 70ch contra media pagina
    vacia. Cada seccion es ahora una banda que usa el ancho completo: con figura
@@ -246,6 +282,8 @@
 /* ------------------------------------------------------------- el cierre */
 .sv-cierre { max-width: 62ch; }
 .sv-cierre h2 { color: #fff; }
+/* El aire entre la bajada y el boton: era un `mb-7` que no existe. */
+.sv-cierre p { margin: 0 0 28px; }
 
 /* ------------------------------------------------- tarjetas de producto */
 /* La pagina de herramientas no lista ambitos de trabajo sino productos. Las
