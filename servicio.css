@@ -189,6 +189,25 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/* -------------------------------------------- la maqueta de telefono */
+/* Un diagrama ancho no se puede reacomodar desde CSS: las cajas y las flechas
+   ya estan puestas en coordenadas. Por eso la figura que lo necesita trae DOS
+   dibujos —el generador emite los dos— y aca se muestra uno solo. El de
+   telefono viene compuesto en vertical y a 335 de ancho, que es lo que queda
+   de un iPhone de 375: entra entero, a escala 1, sin deslizar ni ampliar.
+
+   El corte va en 700 y no en los 760 del resto de la hoja: por encima de eso
+   el dibujo de telefono ya se estaria estirando mas de lo que aguanta. El tope
+   de 470 es esa misma idea por el otro lado —en una pantalla grande el dibujo
+   angosto se centra en vez de inflarse—. */
+.sv-fig-mv { display: none; }
+.sv-fig-mv svg { display: block; width: 100%; max-width: 470px; height: auto; }
+
+@media (max-width: 700px) {
+  .sv-fig-sc { display: none; }
+  .sv-fig-mv { display: block; }
+}
+
 /* `--vbw` es el ancho del viewBox y lo emite el generador (`_svg` en
    servicio_art.py): una figura no se muestra mas grande que el tamano al que
    fue dibujada. Sin ese tope, a 2560 px de ventana la misma figura salia a
