@@ -153,10 +153,28 @@
 .am-split-wide { grid-template-columns: 1fr; }
 @media (min-width: 1024px) { .am-split-wide { grid-template-columns: 5fr 7fr; } }
 
+/* La tarjeta no crece mas alla del tamano al que se dibujo su figura. El tope
+   va en la TARJETA y no en el SVG: puesto en el SVG, la tarjeta seguia
+   tomando el ancho de su columna y le quedaba un hueco al lado del dibujo,
+   dentro del marco. `--vbw` lo emite el generador (`art.ancho`), porque el
+   navegador no puede leer un viewBox desde CSS. Sin el tope, los rotulos de
+   estas figuras iban de 9 px en una ventana de 1280 a 24 px en una de 2560. */
 .am-figure {
   background: #08202C; border: 1px solid rgba(255,255,255,.14);
   border-radius: var(--am-radius); padding: 20px;
+  /* `content-box` a proposito: asi el tope de arriba mide el AREA DE DIBUJO y
+     no la caja con su relleno. Con `border-box` la tarjeta quedaba en 520 px
+     totales y al dibujo le tocaban 478 —escala 0,92 en vez de 1,00— y el
+     numero habria que rehacerlo cada vez que cambie el relleno, que ademas es
+     distinto en telefono. */
+  box-sizing: content-box;
+  max-width: var(--vbw, none);
 }
+/* La tarjeta queda alineada a la izquierda de su columna y NO se centra con
+   `margin-inline:auto`: es un item de grid, y un margen auto ahi lo encoge a
+   su contenido en vez de estirarlo. El SVG de adentro va con `width:100%`, que
+   contra un padre encogido no resuelve y cae al tamano por defecto de un
+   reemplazado —300 px—: la figura se veia a la mitad. */
 .am-light .am-figure, .am-white .am-figure { background: var(--am-pale); border-color: #CFE3E8; }
 .am-figure svg { display: block; width: 100%; height: auto; }
 /* paneles de datos oscuros incluso dentro de secciones claras: las grillas y
@@ -510,6 +528,7 @@
    Se le da un ancho mínimo legible y se desliza dentro de su marco; el pie de
    figura queda fuera del scroll para que siga ajustándose a la pantalla. */
 .am-figscroll { min-width: 0; }
+
 @media (max-width: 760px) {
   .am-section { padding: 64px 20px; }
   .am-figure { padding: 14px; }

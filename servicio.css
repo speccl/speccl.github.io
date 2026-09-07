@@ -51,8 +51,15 @@
 
 .sv-banda-txt { max-width: 74ch; }
 
-/* Con figura, el texto se estrecha y el diagrama toma el resto. */
-@media (min-width: 1080px) {
+/* Con figura, el texto se estrecha y el diagrama toma el resto — pero solo
+   cuando el diagrama cabe entero al lado. Las figuras estan dibujadas a 900
+   unidades de ancho, y la columna de la derecha da 400 de texto + 48 de canal
+   menos que el ancho de seccion; con el margen lateral de 320 por lado que el
+   sitio usa desde 1536, esa columna recien llega a 900 px pasados los 2000 de
+   ventana. Debajo de eso la reja apretaba la figura a 512 px —escala 0,57,
+   rotulos de 7 px, y encima deslizandose dentro de su marco en un escritorio—
+   asi que se apila y la figura sale a su tamano de dibujo. */
+@media (min-width: 2000px) {
   .sv-banda-2 {
     display: grid;
     grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
@@ -136,7 +143,8 @@
 }
 
 /* -------------------------------------------------------------- figuras */
-.sv-fig { margin: 30px 0 0; }
+/* El `--vbw` lo pone el generador con el ancho de dibujo de la figura. */
+.sv-fig { margin: 30px 0 0; max-width: var(--vbw, none); }
 
 /* El diagrama se desliza en pantallas angostas en vez de encogerse: un SVG
    escalado a 330px deja la tipografia en 7px. */
@@ -145,10 +153,15 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/* `--vbw` es el ancho del viewBox y lo emite el generador (`_svg` en
+   servicio_art.py): una figura no se muestra mas grande que el tamano al que
+   fue dibujada. Sin ese tope, a 2560 px de ventana la misma figura salia a
+   escala 1,64 —rotulos de 20 px al lado de un texto de 17— y a 1280 a 0,62. */
 .sv-fig-sc svg {
   display: block;
   min-width: 560px;
   width: 100%;
+  max-width: var(--vbw, none);
   height: auto;
 }
 

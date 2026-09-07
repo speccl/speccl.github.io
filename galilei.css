@@ -158,7 +158,20 @@ img, svg { max-width: 100%; }
    DIAGRAMAS SVG
    ============================================================ */
 .gl-svg { width: 100%; height: auto; display: block; }
-.gl-fig { margin: 0; }
+/* La figura no se estira mas alla de su tamano de dibujo. `--vbw` es el ancho
+   de su viewBox y lo emite el generador (`_svg` en galilei_art.py): el
+   navegador no lo puede leer desde CSS. Sin el tope, estas tres figuras
+   estiraban de 960 a los 1120 de la seccion y sus rotulos salian a 15-16 px,
+   contra los 11-13 del resto del sitio. Aca el tope no deja hueco a la vista
+   porque `.gl-fig` no tiene marco: es la figura sobre el fondo de la seccion. */
+/* La figura no se estira mas alla de su tamano de dibujo, y el marco se
+   encoge con ella: `--vbw` es el ancho del viewBox y lo emite el generador
+   (`_svg` en galilei_art.py), que es el unico que lo sabe —el navegador no
+   puede leer un viewBox desde CSS—. Sin el tope estas figuras estiraban de
+   960 a los 1120 de la seccion y sus rotulos salian a 15-16 px contra los
+   11-13 del resto del sitio. El `fit-content` es para que el pie quede del
+   ancho de la figura y no de la seccion. */
+.gl-fig { margin: 0; max-width: var(--vbw, none); }
 .gl-cap { font-size: 13px; line-height: 1.5; margin: 16px 0 0; }
 .gl-dark .gl-cap, .gl-deep .gl-cap { color: var(--gl-steel); }
 .gl-light .gl-cap, .gl-white .gl-cap { color: var(--gl-grey); }
