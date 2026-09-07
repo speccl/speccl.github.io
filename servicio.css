@@ -1,0 +1,465 @@
+/* Paginas de area de expertise.
+ *
+ * El diseno lo pone el bundle de Next que el sitio ya carga: hero de foto,
+ * seccion oscura con tarjeta de imagen, circulos dorados. Aca va solo lo que
+ * ese bundle no cubre, porque son piezas que el sitio original no tenia: la
+ * prosa larga, la reja de publicaciones y el cierre.
+ */
+
+.sv-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.sv-skip:focus {
+  left: 16px;
+  top: 16px;
+  z-index: 100;
+  background: #fff;
+  color: #071828;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+/* El boton, en el mismo dorado de los circulos numerados del sitio. */
+.sv-cta-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  margin-top: 30px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  background: #E7C873;
+  color: #071828;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background .2s ease;
+}
+.sv-cta-hero:hover { background: #f0d999; }
+
+/* -------------------------------------------------------------- las bandas */
+/* El primer diseno dejaba el texto en una columna de 70ch contra media pagina
+   vacia. Cada seccion es ahora una banda que usa el ancho completo: con figura
+   va a dos columnas, y sin figura despliega su lista como rejilla debajo. */
+.sv-banda {
+  margin-bottom: 56px;
+}
+
+.sv-banda:last-child { margin-bottom: 0; }
+
+.sv-banda-txt { max-width: 74ch; }
+
+/* Con figura, el texto se estrecha y el diagrama toma el resto. */
+@media (min-width: 1080px) {
+  .sv-banda-2 {
+    display: grid;
+    grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+  }
+  .sv-banda-2 .sv-banda-txt { max-width: none; }
+  .sv-banda-2 .sv-fig { margin: 6px 0 0; }
+}
+
+.sv-p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.72;
+  color: #24323E;
+}
+
+.sv-p b { font-weight: 700; color: #071828; }
+
+/* --------------------------------------------------------- las tarjetas */
+/* Las preguntas y los usos se despliegan a lo ancho en vez de bajar en una
+   lista angosta: es lo que llena la pagina y ademas se escanea mejor. */
+/* 250px de minimo, no 272: con cuatro tarjetas y 20 de canal la fila entra
+   justo en el ancho de seccion (4x250 + 3x20 = 1060 < 1120) y no queda una
+   sola tarjeta colgando en una segunda fila. */
+.sv-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 4px 0 56px;
+}
+
+.sv-card {
+  /* min-width:0 o la tarjeta se estira en vez de dejar cortar el texto */
+  min-width: 0;
+  padding: 24px 22px 26px;
+  border: 1px solid rgba(6, 97, 116, .16);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.sv-card-n {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 14px;
+  border: 1px solid #E7C873;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #8A6D1F;
+}
+
+.sv-card h3 {
+  margin: 0 0 8px;
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #071828;
+  text-wrap: balance;
+}
+
+.sv-card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: #4B6675;
+}
+
+.sv-nota {
+  margin: 8px 0 0;
+  padding: 18px 22px;
+  border-left: 3px solid #066174;
+  background: #F4FAFB;
+  border-radius: 0 10px 10px 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #40606F;
+}
+
+/* -------------------------------------------------------------- figuras */
+.sv-fig { margin: 30px 0 0; }
+
+/* El diagrama se desliza en pantallas angostas en vez de encogerse: un SVG
+   escalado a 330px deja la tipografia en 7px. */
+.sv-fig-sc {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sv-fig-sc svg {
+  display: block;
+  min-width: 560px;
+  width: 100%;
+  height: auto;
+}
+
+.sv-fig figcaption {
+  margin-top: 12px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #6E8794;
+}
+
+.sv-fig figcaption b { color: #40606F; font-weight: 600; }
+
+/* ------------------------------------------------------------ los ambitos */
+.sv-ambitos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  gap: 34px 40px;
+}
+
+.sv-ambito { min-width: 0; }
+
+.sv-ambito h3 { margin: 0 0 8px; color: #071828; }
+.sv-ambito p { margin: 0; color: #24323E; }
+
+/* ------------------------------------------------- las publicaciones */
+.sv-pubs-lead {
+  margin: 0 0 32px;
+  max-width: 62ch;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #4B6675;
+}
+
+.sv-pubs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+  gap: 18px;
+}
+
+/* La tarjeta entera es el enlace: el area de clic no puede ser solo el titulo. */
+.sv-pub {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  padding: 22px 20px;
+  border: 1px solid rgba(6, 97, 116, .18);
+  border-radius: 16px;
+  background: #fff;
+  text-decoration: none;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.sv-pub:hover { border-color: #066174; transform: translateY(-2px); }
+
+.sv-pub-a {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: #066174;
+}
+
+.sv-pub-t {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0B1D2A;
+  text-wrap: balance;
+}
+
+/* Tres lineas y corta: las bajadas son de largo desigual y sin esto las
+   tarjetas de una misma fila quedan de alturas distintas. */
+.sv-pub-d {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #4B6675;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------- el cierre */
+.sv-cierre { max-width: 62ch; }
+.sv-cierre h2 { color: #fff; }
+
+/* ------------------------------------------------- tarjetas de producto */
+/* La pagina de herramientas no lista ambitos de trabajo sino productos. Las
+   fotos de archivo del espejo estan reemplazadas por una animacion que muestra
+   lo que hace cada modelo —las mismas que ya estaban desplegadas en el sitio,
+   que antes inyectaba un script sobre la pagina del espejo y ahora vienen en
+   el HTML porque esta pagina la generamos nosotros—. */
+
+/* Dos columnas, no `auto-fit`: con cuatro productos y una animacion adentro,
+   cuatro por fila deja el SVG a 265px y su tipografia en 6px, y `auto-fit`
+   ademas volveria a tres columnas —tres arriba y uno solo abajo— en una
+   pantalla ancha. */
+.sv-tools {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 760px) {
+  .sv-tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.sv-tool-col { min-width: 0; }
+
+.sv-tool {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .11);
+  border-radius: 24px;
+  background: linear-gradient(170deg, #0C2E3C 0%, #08202C 46%, #071828 100%);
+  color: #fff;
+  text-decoration: none;
+  transition: border-color .35s ease-out, transform .35s ease-out,
+              box-shadow .35s ease-out;
+}
+
+a.sv-tool:hover {
+  border-color: rgba(231, 200, 115, .5);
+  transform: translateY(-5px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, .4);
+}
+
+.sv-tool h3 {
+  margin: 0 0 8px;
+  padding: 0 24px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.sv-tool p {
+  margin: 0 0 26px;
+  padding: 0 24px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* El rotulo se pega abajo para que las cuatro tarjetas tengan el mismo ritmo,
+   aunque ARGOS no tenga pagina propia y no lo lleve. */
+.sv-tool-mas {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 24px 26px;
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 700;
+  color: #E7C873;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+a.sv-tool:hover .sv-tool-mas { color: #f0d999; }
+
+/* ---------- el panel de la animacion ---------- */
+.tc-viz { position: relative; padding: 20px 16px 14px; }
+.tc-viz::after {          /* funde el panel con el cuerpo sin tapar rotulos */
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 18px;
+  background: linear-gradient(180deg, rgba(7, 24, 40, 0), rgba(7, 24, 40, .85));
+  pointer-events: none;
+}
+/* El SVG se dibujo para una tarjeta de ~340px. A dos columnas la tarjeta pasa
+   de 500 y la tipografia de 9px quedaria enorme, asi que se le pone tope. */
+.tc-svg { display: block; width: 100%; max-width: 420px; height: auto; margin: 0 auto; }
+
+/* ---------- animaciones ---------- */
+@keyframes tc-bar   { 0%,4% { transform: scaleY(0); } 16%,88% { transform: scaleY(1); }
+                      100%  { transform: scaleY(0); } }
+@keyframes tc-scan  { 0% { transform: translateX(0); opacity: 0; }
+                      8% { opacity: .55; }
+                      92% { opacity: .55; }
+                      100% { transform: translateX(288px); opacity: 0; } }
+@keyframes tc-draw  { 0%,10% { stroke-dashoffset: var(--len,600); }
+                      55%,90% { stroke-dashoffset: 0; }
+                      100% { stroke-dashoffset: var(--len,600); } }
+@keyframes tc-soc   { 0%,10%  { transform: translateY(74%); }
+                      40%,52% { transform: translateY(4%); }
+                      82%,100%{ transform: translateY(74%); } }
+@keyframes tc-agent { 0%,52%,100% { r: 6; fill: #B2CED4; }
+                      12%,36%     { r: 9; fill: #E7C873; } }
+@keyframes tc-drop  { 0%,6%   { opacity: 0; stroke-dashoffset: 60; }
+                      16%,30% { opacity: .9; stroke-dashoffset: 0; }
+                      46%,100%{ opacity: 0; } }
+@keyframes tc-grow  { 0%,4% { transform: scaleY(0); } 14%,92% { transform: scaleY(1); }
+                      100%  { transform: scaleY(0); } }
+@keyframes tc-cell  { 0%,6%   { opacity: 0; transform: scale(.4); }
+                      20%,86% { opacity: 1; transform: scale(1); }
+                      100%    { opacity: 0; transform: scale(.4); } }
+
+.tc-bar   { transform-origin: bottom; transform: scaleY(0);
+            animation: tc-bar 7s cubic-bezier(.22,.8,.28,1) infinite; }
+.tc-scan  { animation: tc-scan 7s linear infinite; }
+.tc-line  { stroke-dasharray: var(--len, 600); stroke-dashoffset: var(--len, 600);
+            animation: tc-draw 7s ease-in-out infinite; }
+.tc-soc   { animation: tc-soc 7s ease-in-out infinite; }
+.tc-agent { animation: tc-agent 4.4s ease-in-out infinite; }
+.tc-drop  { stroke-dasharray: 60; animation: tc-drop 4.4s ease-in-out infinite; }
+.tc-grow  { transform-origin: bottom; transform: scaleY(0);
+            animation: tc-grow 4.4s cubic-bezier(.22,.8,.28,1) infinite; }
+.tc-cell  { transform-origin: center; animation: tc-cell 7s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tc-bar, .tc-grow { transform: scaleY(1); animation: none; }
+  .tc-line { stroke-dashoffset: 0; animation: none; }
+  /* el punto de ARGOS se mueve con SMIL, que esta consulta no detiene */
+  .tc-scan, .tc-drop, .tc-dot { display: none; }
+  .tc-soc { transform: translateY(30%); animation: none; }
+  .tc-agent, .tc-cell { animation: none; }
+  .tc-cell { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   EL HERO DIBUJADO
+   ============================================================
+   Dos de las tres areas conservan la foto del sitio. Herramientas de
+   simulacion no: la foto era un surfista bajo una ola, que no dice nada de lo
+   que la pagina ofrece. En su lugar va el abanico de escenarios, dibujado por
+   `servicio_art.hero_escenarios()`, sobre el mismo fondo oscuro del hero de
+   AMEBA para que las dos paginas se lean como la misma familia. */
+.sv-hero-fondo {
+  background: radial-gradient(120% 90% at 78% 18%, #0B3341 0%, #071828 46%, #05121E 100%);
+}
+.sv-hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.sv-hero-art svg { display: block; width: 100%; height: 100%; }
+
+/* En telefono el hero es una columna angosta y alta: recortando el dibujo para
+   llenarla queda un trozo del abanico cruzando por detras del titular, y las
+   lineas sobre las letras cuestan de leer. Ahi se muestra entero, tumbado al
+   pie del hero —donde el diseno original deja el espacio vacio bajo el boton—
+   en vez de recortado detras del texto. */
+@media (max-width: 767px) {
+  .sv-hero-art { top: auto; bottom: 0; height: auto; left: -34%; opacity: .85; }
+  .sv-hero-art svg { height: auto; }
+}
+
+/* Cada trayectoria se dibuja sola al cargar. El largo del trazo viene medido
+   desde Python en `--len`: asi no hace falta un script que lo calcule en el
+   navegador y la figura se ve desde el primer frame. */
+@keyframes sv-draw { to { stroke-dashoffset: 0; } }
+@keyframes sv-pop  { from { opacity: 0; transform: scale(.2); } to { opacity: 1; transform: none; } }
+
+.sv-traza {
+  stroke-dasharray: var(--len);
+  stroke-dashoffset: var(--len);
+  animation: sv-draw 2.4s cubic-bezier(.22,.8,.28,1) forwards;
+}
+.sv-punta {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sv-pop .5s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sv-traza { stroke-dashoffset: 0; animation: none; }
+  .sv-punta { opacity: 1; animation: none; }
+  /* los puntos que recorren las trayectorias van con SMIL, que la consulta de
+     movimiento reducido no detiene: se sacan del dibujo */
+  .sv-hero-art animateMotion { display: none; }
+}
+
+/* ============================================================
+   LA VENTANA DE LA PLATAFORMA EN LA INTRO
+   ============================================================
+   Es la misma ventana de la seccion «AMEBA en tu navegador» de /ameba, con el
+   mismo generador. Alla ocupa el ancho de la pagina; aca vive en media columna
+   —entre 460 y 540 px en escritorio— asi que se aprieta lo que alla se
+   despliega: el arbol se angosta, las metricas bajan a tres y los dos paneles
+   se apilan en vez de ir lado a lado. */
+.sv-app .am-app-body { grid-template-columns: 168px minmax(0, 1fr); }
+.sv-app .am-app-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.sv-app .am-app-panels { grid-template-columns: minmax(0, 1fr); }
+.sv-app .am-app-main { padding: 12px; }
+
+/* En pantalla angosta la ventana se desliza dentro de su marco, como en
+   /ameba: es una aplicacion de escritorio y encogerla mas la vuelve ilegible. */
+@media (max-width: 767px) {
+  .sv-app .am-browser-body { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .sv-app .am-browser-body .am-app { min-width: 520px; }
+}
+
+/* La fila de la intro cuando lleva la ventana en vez de una foto. Dos columnas
+   recien a 1280 px: mas abajo la media columna deja la ventana en 330 px y no
+   entra ni el arbol de casos. */
+.sv-intro { display: flex; flex-direction: column; gap: 32px; }
+.sv-intro-txt, .sv-intro-media { min-width: 0; }
+
+/* La marca de agua de nodos de la seccion es `absolute z-0`, asi que se pinta
+   por encima de todo lo que no este posicionado: la tarjeta de foto del
+   espejo es `relative` y por eso no le pasaba. La ventana tambien tiene que
+   estar posicionada o las lineas de la retícula le cruzan por encima. */
+.sv-intro-media { position: relative; z-index: 1; }
+
+@media (min-width: 1280px) {
+  .sv-intro { flex-direction: row; gap: 40px; align-items: center; }
+  .sv-intro-txt { width: 44%; }
+  .sv-intro-media { width: 56%; }
+}
