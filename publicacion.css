@@ -1,0 +1,155 @@
+/* Pagina de una publicacion.
+ *
+ * Solo lo que columna.css no cubre: el hero sin canvas, la ficha del documento
+ * a un lado del resumen y la lista numerada. Todo lo demas —tipografia del
+ * articulo, botones, migas, veladura del hero— se hereda de ahi.
+ */
+
+/* El hero de la columna reserva altura para el canvas de la trayectoria.
+   Aca no hay figura, asi que se ajusta a lo que ocupa el texto. */
+.pu-hero {
+  min-height: 0;
+  padding-bottom: 76px;
+}
+
+.pu-acciones {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.pu-peso {
+  font-size: 13px;
+  letter-spacing: .02em;
+  color: #9FBAC7;
+}
+
+/* Resumen y ficha. La ficha se pega arriba mientras se lee el resumen: es la
+   referencia que uno vuelve a mirar (quien lo escribio, de que ano es). */
+.pu-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 56px;
+  align-items: start;
+}
+
+/* min-width:0 en el hijo de grid, o la columna del texto se estira en vez de
+   dejar que la tabla o el codigo desborden en su propio contenedor. */
+.pu-art {
+  min-width: 0;
+  max-width: none;
+}
+
+.pu-ficha {
+  position: sticky;
+  top: 96px;
+  min-width: 0;
+  border: 1px solid rgba(6, 97, 116, .18);
+  border-radius: 16px;
+  padding: 24px 22px;
+  background: #F4FAFB;
+}
+
+.pu-ficha h2 {
+  margin: 0 0 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: #066174;
+}
+
+.pu-ficha dl {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pu-fila dt {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #6E8794;
+  margin-bottom: 4px;
+}
+
+.pu-fila dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #16303E;
+}
+
+/* `.co-btn-line` es blanco sobre el hero oscuro: sobre la ficha clara
+   desaparece. Este boton se pinta solo, en el teal de la marca. */
+.pu-dl {
+  margin-top: 22px;
+  width: 100%;
+  justify-content: center;
+  background: #066174;
+  border-color: #066174;
+  color: #fff;
+}
+
+.pu-dl:hover {
+  background: #05505f;
+  border-color: #05505f;
+  color: #fff;
+}
+
+.pu-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 16px;
+  font-size: 13.5px;
+  color: #066174;
+  text-decoration: none;
+}
+
+.pu-volver:hover { text-decoration: underline; }
+
+/* La numeracion es informacion: son las cuatro lineas de reforma del informe,
+   no vinetas intercambiables. */
+.pu-lista {
+  /* El reset del bundle de Next pone `list-style: none` en todas las listas,
+     asi que hay que reponer el marcador: sin el, las cuatro lineas de reforma
+     se leen como vinetas intercambiables y se pierde que son una enumeracion
+     del informe. */
+  list-style: decimal outside;
+  margin: 22px 0;
+  padding-left: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pu-lista li {
+  font-size: 17px;
+  line-height: 1.68;
+  color: #24404E;
+  padding-left: 6px;
+}
+
+.pu-lista li::marker {
+  color: #066174;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .pu-cols {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  /* En una columna la ficha va DESPUES del resumen: pegarla arriba en el
+     telefono la dejaria tapando el texto que uno vino a leer. */
+  .pu-ficha {
+    position: static;
+    order: 2;
+  }
+  .pu-art { order: 1; }
+}

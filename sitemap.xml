@@ -80,6 +80,72 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/nuestro-equipo/"/>
   </url>
   <url>
+    <loc>https://www.spec.cl/en/publicaciones/2020-almacenamiento-como-transmision/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2020-almacenamiento-como-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2020-almacenamiento-como-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2020-almacenamiento-como-transmision/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2020-covid19-consumo-electrico/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2020-covid19-consumo-electrico/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2020-covid19-consumo-electrico/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2020-covid19-consumo-electrico/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2021-cambios-mercado-descarbonizacion-profunda/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2021-cambios-mercado-descarbonizacion-profunda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2021-cambios-mercado-descarbonizacion-profunda/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2021-cambios-mercado-descarbonizacion-profunda/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2021-metodos-probabilisticos-suficiencia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2021-metodos-probabilisticos-suficiencia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2021-metodos-probabilisticos-suficiencia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2021-metodos-probabilisticos-suficiencia/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2022-almacenamiento-larga-duracion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2022-almacenamiento-larga-duracion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2022-almacenamiento-larga-duracion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2022-almacenamiento-larga-duracion/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2023-acciones-sistemicas-transmision-informe-final/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2023-acciones-sistemicas-transmision/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-acciones-sistemicas-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2023-proyeccion-recortes-ernc/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-proyeccion-recortes-ernc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-proyeccion-recortes-ernc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-proyeccion-recortes-ernc/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2023-riesgo-infraestructura-renovable/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-riesgo-infraestructura-renovable/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-riesgo-infraestructura-renovable/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-riesgo-infraestructura-renovable/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2024-recomendaciones-descarbonizacion-matriz/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/en/publicaciones/2026-almacenamiento-corta-duracion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2026-almacenamiento-corta-duracion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2026-almacenamiento-corta-duracion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2026-almacenamiento-corta-duracion/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/en/publicaciones/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/"/>
@@ -176,6 +242,72 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/nuestro-equipo/"/>
   </url>
   <url>
+    <loc>https://www.spec.cl/es/publicaciones/2020-almacenamiento-como-transmision/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2020-almacenamiento-como-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2020-almacenamiento-como-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2020-almacenamiento-como-transmision/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2020-covid19-consumo-electrico/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2020-covid19-consumo-electrico/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2020-covid19-consumo-electrico/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2020-covid19-consumo-electrico/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2021-cambios-mercado-descarbonizacion-profunda/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2021-cambios-mercado-descarbonizacion-profunda/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2021-cambios-mercado-descarbonizacion-profunda/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2021-cambios-mercado-descarbonizacion-profunda/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2021-metodos-probabilisticos-suficiencia/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2021-metodos-probabilisticos-suficiencia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2021-metodos-probabilisticos-suficiencia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2021-metodos-probabilisticos-suficiencia/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2022-almacenamiento-larga-duracion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2022-almacenamiento-larga-duracion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2022-almacenamiento-larga-duracion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2022-almacenamiento-larga-duracion/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision-informe-final/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision-informe-final/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-acciones-sistemicas-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-acciones-sistemicas-transmision/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2023-proyeccion-recortes-ernc/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-proyeccion-recortes-ernc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-proyeccion-recortes-ernc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-proyeccion-recortes-ernc/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2023-riesgo-infraestructura-renovable/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2023-riesgo-infraestructura-renovable/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2023-riesgo-infraestructura-renovable/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-riesgo-infraestructura-renovable/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2024-recomendaciones-descarbonizacion-matriz/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/publicaciones/2026-almacenamiento-corta-duracion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2026-almacenamiento-corta-duracion/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2026-almacenamiento-corta-duracion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2026-almacenamiento-corta-duracion/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/es/publicaciones/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/"/>
@@ -200,9 +332,6 @@
     <loc>https://www.spec.cl/publicaciones/2020-covid19-consumo-electrico.pdf</loc>
   </url>
   <url>
-    <loc>https://www.spec.cl/publicaciones/2021-almacenamiento-larga-duracion.pdf</loc>
-  </url>
-  <url>
     <loc>https://www.spec.cl/publicaciones/2021-cambios-mercado-descarbonizacion-profunda.pdf</loc>
   </url>
   <url>
@@ -213,6 +342,9 @@
   </url>
   <url>
     <loc>https://www.spec.cl/publicaciones/2021-ruta-cero-emisiones.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2022-almacenamiento-larga-duracion.pdf</loc>
   </url>
   <url>
     <loc>https://www.spec.cl/publicaciones/2022-condiciones-habilitantes-descarbonizacion.pdf</loc>
