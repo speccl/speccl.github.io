@@ -193,4 +193,28 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/seguridad-de-informacion/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/seguridad-de-informacion/"/>
   </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2020-almacenamiento-como-transmision.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2020-covid19-consumo-electrico.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2021-almacenamiento-larga-duracion.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2021-metodos-probabilisticos-suficiencia.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2021-modelo-confiabilidad-elcc-ecp.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2021-ruta-cero-emisiones.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2022-condiciones-habilitantes-descarbonizacion.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2023-riesgo-infraestructura-renovable.pdf</loc>
+  </url>
 </urlset>
