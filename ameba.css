@@ -529,6 +529,31 @@
    figura queda fuera del scroll para que siga ajustándose a la pantalla. */
 .am-figscroll { min-width: 0; }
 
+/* ---------- las dos maquetas de una figura ----------
+   Un diagrama ancho no se puede reacomodar desde CSS: sus cajas y sus flechas
+   ya estan puestas en coordenadas. La unica forma de que en el telefono entre
+   entero —sin deslizarlo y sin obligar a ampliarlo— es dibujarlo otra vez, en
+   vertical y angosto. La figura que lo necesita trae entonces DOS dibujos, el
+   generador emite los dos y aca se muestra uno solo.
+
+   Las clases son a proposito neutras y viven en esta hoja, que es la base que
+   cargan todas las paginas: `am-fig-desk` y `am-fig-mv` dicen cual se ve, y
+   cada pagina sigue poniendo encima su propio contenedor —`am-figscroll`,
+   `sv-fig-sc`, `vt-figsc`— sin repetir el mecanismo.
+
+   El corte va en 700 y no en los 760 del resto de la hoja: por encima de eso
+   el dibujo angosto ya se estaria estirando mas de lo que aguanta. El tope de
+   470 es la misma idea por el otro lado: en una pantalla mayor se centra en
+   vez de inflarse. */
+.am-fig-mv { display: none; }
+.am-fig-mv svg { display: block; width: 100%; max-width: 470px; height: auto;
+                 margin-inline: auto; min-width: 0; }
+
+@media (max-width: 700px) {
+  .am-fig-desk { display: none; }
+  .am-fig-mv { display: block; }
+}
+
 @media (max-width: 760px) {
   .am-section { padding: 64px 20px; }
   .am-figure { padding: 14px; }
