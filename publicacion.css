@@ -12,6 +12,23 @@
   padding-bottom: 76px;
 }
 
+/* El titular de una columna es editorial y corto —«La batería no bajó el
+   vertimiento»— y aguanta los 62 px del hero. El de una publicación es el
+   título de un documento técnico: 80 o 100 caracteres es lo normal, y a ese
+   tamaño se comía ocho líneas de pantalla. Baja de escalón y se le pone un
+   ancho máximo en unidades de texto, para que corte por medida de lectura y
+   no por el ancho del viewport. */
+.pu-hero h1 {
+  font-size: clamp(30px, 3.3vw, 46px);
+  line-height: 1.14;
+  max-width: 20ch;
+  letter-spacing: -0.015em;
+}
+
+@media (min-width: 900px) {
+  .pu-hero h1 { max-width: 24ch; }
+}
+
 .pu-acciones {
   display: flex;
   align-items: center;
@@ -75,6 +92,15 @@
   text-transform: uppercase;
   color: #6E8794;
   margin-bottom: 4px;
+}
+
+/* El titulo oficial completo, cuando el <h1> es una version corta: la cita
+   exacta del documento tiene que estar en la pagina aunque no quepa en el
+   hero. */
+.pu-fila.pu-oficial dd {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #40606F;
 }
 
 .pu-fila dd {
