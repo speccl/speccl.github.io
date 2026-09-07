@@ -140,6 +140,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-riesgo-infraestructura-renovable/"/>
   </url>
   <url>
+    <loc>https://www.spec.cl/en/publicaciones/2024-planificacion-expansion-transmision/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2024-planificacion-expansion-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2024-planificacion-expansion-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2024-planificacion-expansion-transmision/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/en/publicaciones/2024-recomendaciones-descarbonizacion-matriz/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
@@ -308,6 +314,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2023-riesgo-infraestructura-renovable/"/>
   </url>
   <url>
+    <loc>https://www.spec.cl/es/publicaciones/2024-planificacion-expansion-transmision/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2024-planificacion-expansion-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2024-planificacion-expansion-transmision/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/publicaciones/2024-planificacion-expansion-transmision/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/es/publicaciones/2024-recomendaciones-descarbonizacion-matriz/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/publicaciones/2024-recomendaciones-descarbonizacion-matriz/"/>
@@ -375,6 +387,9 @@
   </url>
   <url>
     <loc>https://www.spec.cl/publicaciones/2023-riesgo-infraestructura-renovable.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2024-planificacion-expansion-transmision.pdf</loc>
   </url>
   <url>
     <loc>https://www.spec.cl/publicaciones/2024-recomendaciones-descarbonizacion-matriz.pdf</loc>
