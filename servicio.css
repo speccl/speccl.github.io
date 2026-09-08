@@ -633,32 +633,27 @@ a.sv-tool:hover .sv-tool-mas { color: #f0d999; }
   padding: 14px 0;
 }
 
+/* Cada línea se recorta en el borde en vez de partirse: una línea tachada que
+   salta a la siguiente parecería otro párrafo, y en teléfono saltarían casi
+   todas. Recortada se lee como un documento que sigue fuera del cuadro. */
 .sv-doc-l {
   position: relative;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 7px;
   min-height: 20px;
   padding: 2px 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-.sv-doc-l > i {
-  display: block;
-  height: 5px;
-  border-radius: 3px;
-  background: rgba(255,255,255,.16);
-  /* se encogen antes que saltar de línea: en teléfono una regla de ancho fijo
-     que no cabe se iba sola a la línea siguiente y parecía otro párrafo */
-  flex: 0 1 auto;
-  min-width: 12px;
+/* El articulado va en X: la norma que ilustra la tarjeta no existe, y una
+   línea de X se lee como articulado sin serlo. El interletrado abierto es lo
+   que la hace parecer texto y no una barra sólida. */
+.sv-doc-l > span {
+  color: rgba(220,231,234,.55);
+  letter-spacing: .06em;
 }
-
-/* La regla final de cada línea estira hasta el borde: sin eso el párrafo se
-   muere a media caja y se ve que no es texto, sino trozos sueltos. */
-.sv-doc-l > i.sv-doc-fin { flex: 1 1 40px; min-width: 24px; }
-
-.sv-doc-l > span { color: #DCE7EA; }
 
 /* El canal de la izquierda: el signo dice qué pasó con la línea y la barra de
    color lo repite. Un color solo no alcanza —+ y − sí se leen—. */
@@ -682,13 +677,11 @@ a.sv-tool:hover .sv-tool-mas { color: #f0d999; }
   border-radius: 2px;
 }
 
-.sv-doc-quita > span { color: #8FA3AC; text-decoration: line-through; }
-.sv-doc-quita > i { background: rgba(255,255,255,.09); }
+.sv-doc-quita > span { color: rgba(143,163,172,.6); text-decoration: line-through; }
 .sv-doc-quita > .sv-doc-g { color: #9FBAC7; }
 .sv-doc-quita::before { background: rgba(255,255,255,.3); }
 
-.sv-doc-pone > span { color: #F0DFA8; }
-.sv-doc-pone > i { background: rgba(231,200,115,.32); }
+.sv-doc-pone > span { color: rgba(240,223,168,.85); }
 .sv-doc-pone > .sv-doc-g { color: #E7C873; }
 .sv-doc-pone::before { background: #E7C873; }
 
