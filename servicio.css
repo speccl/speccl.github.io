@@ -65,6 +65,29 @@
 }
 @media (min-width: 1024px) { .sv-h2 { font-size: 40px; line-height: 48px; } }
 
+/* "Una muestra publica" abre un listado de fichas de 16 px, no un tramo del
+   argumento: a 40 px gritaba mas fuerte que los titulos del articulo que venia
+   leyendo y mucho mas que las tarjetas que presenta. El cierre se queda en 40
+   porque es el remate de la pagina y va sobre su propia banda oscura. */
+.sv-h2-lista { font-size: 26px; line-height: 34px; }
+@media (min-width: 1024px) { .sv-h2-lista { font-size: 30px; line-height: 38px; } }
+
+/* "Nuestro trabajo abarca, entre otros ambitos, la ejecucion de:" no es un
+   titulo: es una frase subordinada que termina en dos puntos y que solo existe
+   para entregar la lista que viene abajo. Puesta a 40 px y centrada pesaba lo
+   mismo que el cierre de la pagina. Sigue siendo un h2 —abre la seccion y el
+   esquema del documento lo necesita— pero se pinta como lo que es, una
+   entrada, alineada con la reja que introduce en vez de centrada sobre ella. */
+.sv-h2-entrada {
+  margin: 0 0 28px;
+  max-width: 62ch;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 28px;
+  color: #4B6675;
+}
+@media (min-width: 1024px) { .sv-h2-entrada { font-size: 21px; line-height: 30px; } }
+
 /* El titulo de una banda de la prosa va un punto abajo del de seccion: abre
    un tramo del articulo, no una pieza de la pagina. */
 .sv-h2-banda {
@@ -211,16 +234,46 @@
 .sv-fig figcaption b { color: #40606F; font-weight: 600; }
 
 /* ------------------------------------------------------------ los ambitos */
+/* `auto-fit` a secas dejaba tres columnas de 347 en un monitor de 1440, o sea
+   los cuatro ambitos en 3 + 1, con el cuarto huerfano en su propia fila. La
+   cantidad la sabe el generador, asi que la fija: cuatro van en fila, y los
+   cinco de estrategia se quedan en 3 + 2, que es mejor reparto que 4 + 1. */
 .sv-ambitos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
-  gap: 34px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 34px 32px;
+}
+
+@media (min-width: 1024px) {
+  .sv-ambitos[data-n="4"] { grid-template-columns: repeat(4, 1fr); }
+  .sv-ambitos[data-n="5"] { grid-template-columns: repeat(3, 1fr); }
 }
 
 .sv-ambito { min-width: 0; }
 
-.sv-ambito h3 { margin: 0 0 8px; color: #071828; }
-.sv-ambito p { margin: 0; color: #24323E; }
+/* El titulo del ambito venia a 24 px contra una glosa de 18 y una prosa de 17:
+   cuatro titulos de ese tamano en fila competian con el h2 de la seccion. A 20
+   la jerarquia queda ordenada —seccion, ambito, glosa— y la reja se lee como
+   una lista y no como cuatro encabezados sueltos. */
+.sv-ambito h3 {
+  margin: 0 0 6px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #071828;
+}
+
+.sv-ambito p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 27px;
+  color: #24323E;
+}
+
+/* El icono va arriba del titulo y no a su lado: en una columna de 256 px un
+   icono a la izquierda le come al texto el ancho justo donde la glosa empieza
+   a partirse en cuatro lineas. */
+.sv-ico { display: block; margin: 0 0 12px -3px; }
 
 /* ------------------------------------------------- las publicaciones */
 .sv-pubs-lead {
