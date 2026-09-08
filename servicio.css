@@ -522,9 +522,20 @@ a.sv-tool:hover .sv-tool-mas { color: #f0d999; }
   animation: sv-pop .5s ease-out forwards;
 }
 
+/* El hero del articulado: cada version entra por su cuenta, de izquierda a
+   derecha, y los articulos que esa version modifico laten. */
+@keyframes sv-colin { from { opacity: 0; transform: translateY(14px); }
+                      to   { opacity: 1; transform: none; } }
+@keyframes sv-mod   { 0%, 100% { opacity: 1; } 50% { opacity: .42; } }
+
+.sv-col { opacity: 0; animation: sv-colin .7s cubic-bezier(.22,.8,.28,1) both; }
+.sv-mod { animation: sv-mod 3.6s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   .sv-traza { stroke-dashoffset: 0; animation: none; }
   .sv-punta { opacity: 1; animation: none; }
+  .sv-col   { opacity: 1; animation: none; }
+  .sv-mod   { animation: none; }
   /* los puntos que recorren las trayectorias van con SMIL, que la consulta de
      movimiento reducido no detiene: se sacan del dibujo */
   .sv-hero-art animateMotion { display: none; }
@@ -566,4 +577,166 @@ a.sv-tool:hover .sv-tool-mas { color: #f0d999; }
   .sv-intro { flex-direction: row; gap: 40px; align-items: center; }
   .sv-intro-txt { width: 44%; }
   .sv-intro-media { width: 56%; }
+}
+
+/* ============================================================
+   LA PROPUESTA NORMATIVA
+   ============================================================
+   La tarjeta a la derecha de la intro de estrategia y regulación. Va en HTML
+   —no en SVG— porque su contenido es texto: reflowea, conserva su cuerpo y se
+   puede seleccionar. Vive en media columna, donde un SVG escalado dejaría la
+   tipografía en 8 px. */
+.sv-doc {
+  background: #0B2733;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 16px;
+  padding: 20px 22px 18px;
+  color: #C6D6DA;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.sv-doc-top { display: flex; align-items: center; gap: 12px; }
+
+.sv-doc-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #E7C873;
+}
+
+/* La píldora no es decoración: el articulado que ilustra la tarjeta no existe,
+   y decirlo es lo único honesto. */
+.sv-doc-tag {
+  margin-left: auto;
+  font-size: 10.5px;
+  letter-spacing: .06em;
+  color: #9FBAC7;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.sv-doc-sub {
+  margin: 4px 0 16px;
+  font-size: 12.5px;
+  color: #9FBAC7;
+}
+
+/* ---------------- el articulado ---------------- */
+/* Cada línea mezcla reglas grises con palabras reales: se lee como articulado
+   sin serlo. Las reglas son <i> con un ancho fijo en px, que es lo que fija el
+   ritmo del párrafo. */
+.sv-doc-body {
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  padding: 14px 0;
+}
+
+.sv-doc-l {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  min-height: 20px;
+  padding: 2px 0;
+}
+
+.sv-doc-l > i {
+  display: block;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255,255,255,.16);
+  /* se encogen antes que saltar de línea: en teléfono una regla de ancho fijo
+     que no cabe se iba sola a la línea siguiente y parecía otro párrafo */
+  flex: 0 1 auto;
+  min-width: 12px;
+}
+
+/* La regla final de cada línea estira hasta el borde: sin eso el párrafo se
+   muere a media caja y se ve que no es texto, sino trozos sueltos. */
+.sv-doc-l > i.sv-doc-fin { flex: 1 1 40px; min-width: 24px; }
+
+.sv-doc-l > span { color: #DCE7EA; }
+
+/* El canal de la izquierda: el signo dice qué pasó con la línea y la barra de
+   color lo repite. Un color solo no alcanza —+ y − sí se leen—. */
+.sv-doc-g {
+  flex: 0 0 14px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+}
+
+.sv-doc-l::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  bottom: 3px;
+  width: 2px;
+  border-radius: 2px;
+}
+
+.sv-doc-quita > span { color: #8FA3AC; text-decoration: line-through; }
+.sv-doc-quita > i { background: rgba(255,255,255,.09); }
+.sv-doc-quita > .sv-doc-g { color: #9FBAC7; }
+.sv-doc-quita::before { background: rgba(255,255,255,.3); }
+
+.sv-doc-pone > span { color: #F0DFA8; }
+.sv-doc-pone > i { background: rgba(231,200,115,.32); }
+.sv-doc-pone > .sv-doc-g { color: #E7C873; }
+.sv-doc-pone::before { background: #E7C873; }
+
+/* Lo que se agrega entra escalonado al cargar: es el gesto de la modificación,
+   y es lo único que se mueve en la tarjeta. */
+@keyframes sv-doc-in { from { opacity: 0; transform: translateX(-8px); }
+                       to   { opacity: 1; transform: none; } }
+.sv-doc-pone { animation: sv-doc-in .55s cubic-bezier(.22,.8,.28,1) both; }
+.sv-doc-pone:nth-of-type(5) { animation-delay: .30s; }
+.sv-doc-pone:nth-of-type(6) { animation-delay: .42s; }
+.sv-doc-pone:nth-of-type(7) { animation-delay: .54s; }
+
+/* ---------------- el efecto simulado ---------------- */
+.sv-doc-efecto { padding-top: 14px; }
+
+.sv-doc-eh {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #9FBAC7;
+  margin-bottom: 6px;
+}
+
+.sv-doc-num {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Las dos cifras van juntas: sueltas en el flex, en teléfono el «11,94 % →»
+   quedaba en una línea y el «9,67 %» en la siguiente. */
+.sv-doc-par { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }
+.sv-doc-num em { font-style: normal; font-size: 12.5px; color: #9FBAC7; margin-right: auto; }
+.sv-doc-num b  { font-size: 19px; font-weight: 700; color: #DCE7EA; }
+.sv-doc-num u  { text-decoration: none; color: #6E8794; }
+.sv-doc-oro    { color: #E7C873 !important; }
+
+/* Las cifras son reales, así que llevan su fuente: es la misma convención del
+   resto del sitio y las mismas cifras del gráfico `recorte` de más abajo. */
+.sv-doc-src {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  color: #6E8794;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sv-doc-pone { animation: none; opacity: 1; transform: none; }
 }
