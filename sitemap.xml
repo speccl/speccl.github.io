@@ -56,6 +56,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/inteligencia-de-mercado/"/>
   </url>
   <url>
+    <loc>https://www.spec.cl/en/nuestro-equipo/alonso-martinez/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/nuestro-equipo/alonso-martinez/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/nuestro-equipo/alonso-martinez/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/nuestro-equipo/alonso-martinez/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/en/nuestro-equipo/carlos-suazo-martinez/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/nuestro-equipo/carlos-suazo-martinez/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/nuestro-equipo/carlos-suazo-martinez/"/>
@@ -228,6 +234,12 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/inteligencia-de-mercado/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/inteligencia-de-mercado/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/inteligencia-de-mercado/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/nuestro-equipo/alonso-martinez/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/nuestro-equipo/alonso-martinez/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/nuestro-equipo/alonso-martinez/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/nuestro-equipo/alonso-martinez/"/>
   </url>
   <url>
     <loc>https://www.spec.cl/es/nuestro-equipo/carlos-suazo-martinez/</loc>
