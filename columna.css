@@ -175,6 +175,16 @@ img.co-by-av { object-fit: cover; display: block; }
 @media (min-width: 1536px) { .co-s { padding-inline: var(--2xlpx-section); } }
 
 .co-art { max-width: 68ch; margin-inline: auto; }
+/* En computador la columna se abre a 80ch (~865 px) y el cuerpo sube a
+   19 px: el texto se ve más ancho sin que la línea se alargue. A 68ch y
+   17,5 px ya iba en ~80 caracteres por línea, el borde alto de lo cómodo;
+   ensanchar sin subir la letra la pasaba de 90. Las figuras que se salen de
+   la medida (.vt-fig, .co-tabla) crecen con ella; vertimiento.css les
+   recorta el sangrado para que sus rótulos no pasen de 14 px. */
+@media (min-width: 1100px) {
+  .co-art { max-width: 80ch; }
+  .co-art .co-p { font-size: 19px; }
+}
 
 .co-h2 { font-size: clamp(24px, 3vw, 34px); line-height: 1.18; font-weight: 700;
          letter-spacing: -.02em; margin: 56px 0 18px; text-wrap: balance;
@@ -242,6 +252,11 @@ img.co-by-av { object-fit: cover; display: block; }
            background: #F0F2F3; border: 1px solid var(--co-border);
            font-size: 13.5px; line-height: 1.62; color: #4A5A63; }
 .co-nota b { color: var(--co-ink); }
+/* La nota de método nombra vistas de Galilei, y
+   `gold_precios_cmg_pronostico_hidrologia_bloque` no tiene dónde cortarse:
+   en un teléfono empujaba la página 29 px hacia el costado. Sólo corta dentro
+   de una palabra cuando no queda otra. */
+.co-nota { overflow-wrap: anywhere; }
 
 @media (max-width: 640px) {
   .co-p { font-size: 16.5px; }

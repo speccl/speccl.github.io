@@ -166,6 +166,19 @@
   font-weight: 600;
 }
 
+/* El resumen usa la misma medida que las columnas de opinión: 80ch de texto
+   (~865 px) con el cuerpo en 19 px (columna.css). Con la ficha al lado eso
+   pide ~1.220 px, más de lo que deja el relleno de la sección a 1440, así
+   que la reja se sale del relleno y se centra en la ventana, con 56 px de
+   aire por lado como mínimo. En ventanas angostas el texto cede primero. */
+@media (min-width: 1100px) {
+  .pu-cols {
+    --pu-w: min(calc(80ch + 356px), calc(100vw - 112px));
+    width: var(--pu-w);
+    margin-left: calc(50% - var(--pu-w) / 2);
+  }
+}
+
 @media (max-width: 900px) {
   .pu-cols {
     grid-template-columns: 1fr;

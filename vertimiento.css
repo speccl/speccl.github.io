@@ -10,7 +10,9 @@
    dentro de 68ch queda ilegible. En angosto no se encoge: se desliza. Una
    tipografía de 11 px escalada a 330 px de ancho queda en 5. */
 .vt-fig { margin: 34px 0 30px; }
-@media (min-width: 1100px) { .vt-fig { margin-inline: -78px; } }
+/* El sangrado era de 78 px con el artículo a 68ch. Con la columna a 80ch
+   (columna.css) ese sangrado dejaba los rótulos en 14,3 px: se recorta a 60. */
+@media (min-width: 1100px) { .vt-fig { margin-inline: -60px; } }
 
 .vt-figsc { overflow-x: auto; -webkit-overflow-scrolling: touch;
             border-radius: var(--co-r-s); background: #fff;
@@ -20,7 +22,7 @@
 .vt-fig figcaption { margin-top: 11px; font-size: 12.5px; line-height: 1.55;
                      color: var(--co-grey); display: flex; flex-wrap: wrap;
                      align-items: baseline; gap: 6px 14px; }
-@media (min-width: 1100px) { .vt-fig figcaption { margin-inline: 78px; } }
+@media (min-width: 1100px) { .vt-fig figcaption { margin-inline: 60px; } }
 .vt-fig figcaption b { color: var(--co-ink); font-weight: 600; }
 .vt-glosa { flex: 1 1 300px; min-width: 0; }
 
