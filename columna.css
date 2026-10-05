@@ -125,6 +125,9 @@ img.co-by-av { object-fit: cover; display: block; }
 
 .co-by-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .co-by-name { font-weight: 700; font-size: 15.5px; color: #fff; }
+a.co-by-name { text-decoration: underline; text-decoration-color: rgba(231,200,115,.45);
+               text-underline-offset: 3px; transition: text-decoration-color .2s; }
+a.co-by-name:hover { text-decoration-color: var(--co-gold); }
 .co-by-meta { font-size: 12.5px; color: #9FBAC7; display: flex; flex-wrap: wrap;
               align-items: center; gap: 8px; }
 .co-by-meta span { display: inline-flex; align-items: center; gap: 8px; }
