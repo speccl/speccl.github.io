@@ -1,0 +1,52 @@
+/* ============================================================
+   COLUMNA «REDES PARA EL CLIMA QUE VIENE» — lo propio
+   Va después de columna.css y vertimiento.css; namespace .rd-*
+   ============================================================ */
+
+/* ---------- el mapa del hero ----------
+   Ocupa el lugar del canvas de las otras columnas: los tres tramos de Chile
+   en oscuro, a la derecha, bajo el velo. En angosto se apaga igual que el
+   canvas (columna.css), por la misma razón: detrás del texto es trama sucia. */
+.rd-hero-mapa { position: absolute; z-index: 0; top: 50%; right: 2vw;
+                height: min(94%, 1100px); width: auto; max-width: 62vw;
+                object-fit: contain; object-position: right center;
+                transform: translateY(-50%); pointer-events: none;
+                /* los paneles son ventanas de latitud: arriba y abajo cortan
+                   recto, y sin el desvanecido se lee el borde de la imagen */
+                -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+                mask-image: linear-gradient(180deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+                animation: rd-in 1.4s cubic-bezier(.2,.7,.2,1) both .2s; }
+@keyframes rd-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .rd-hero-mapa { animation: none; } }
+@media (max-width: 900px) { .rd-hero-mapa { display: none; } }
+
+/* ---------- el mapa comunal del cuerpo ----------
+   Tres paneles del mismo alto y la misma escala, uno al lado del otro: el
+   flex los reparte en proporción a su ancho (redes_art.PANELES). La leyenda
+   va a la derecha y, en angosto, abajo. */
+.rd-figsc { overflow: visible; }
+.rd-mapa { display: flex; gap: 22px; align-items: flex-start; }
+.rd-cols { flex: 1 1 auto; min-width: 0; display: flex; gap: 14px; }
+.rd-col { min-width: 0; display: flex; flex-direction: column; }
+.rd-col img { display: block; width: 100%; height: auto; }
+.rd-zona { font-size: 11px; font-weight: 700; letter-spacing: .14em;
+           text-transform: uppercase; color: var(--co-teal); margin-bottom: 8px; }
+
+.rd-ley { flex: 0 0 180px; padding-top: 30px; font-size: 12px; color: var(--co-grey); }
+.rd-ley p { margin: 0; }
+.rd-ley-t { font-size: 13px; line-height: 1.3; color: var(--co-ink); font-weight: 600;
+            margin-bottom: 10px !important; }
+.rd-bar { height: 10px; border-radius: 4px; }
+.rd-ticks { position: relative; height: 18px; margin-top: 4px; }
+.rd-ticks span { position: absolute; transform: translateX(-50%); }
+.rd-ticks span:first-child { transform: none; }
+.rd-ticks span:last-child { transform: translateX(-100%); }
+.rd-ley-n { line-height: 1.45; margin-top: 8px !important; }
+.rd-nd { display: flex; align-items: center; gap: 7px; margin-top: 12px !important; }
+.rd-nd i { display: inline-block; width: 14px; height: 11px; border-radius: 3px; }
+
+@media (max-width: 720px) {
+  .rd-mapa { flex-direction: column; gap: 14px; }
+  .rd-cols { width: 100%; gap: 8px; }
+  .rd-ley { flex: none; width: 100%; max-width: 280px; padding-top: 0; }
+}
