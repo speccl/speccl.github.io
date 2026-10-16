@@ -58,3 +58,13 @@ ol.dg-notas li { font-size: 14px; line-height: 1.62; color: #4A5A63;
                  padding-left: 30px; margin-bottom: 12px; }
 ol.dg-notas li::before { width: 20px; height: 20px; font-size: 11px; line-height: 20px;
                          top: 1px; }
+
+/* ---------- la figura animada del despacho ----------
+   Los puntos eligen un reparto; el que se ve va relleno. Son <g> dentro del
+   SVG con role="button", así que el foco del teclado se dibuja aquí. */
+.dg-dot { cursor: pointer; outline: none; }
+.dg-dot .dg-dot-c { fill: #fff; stroke: #066174; stroke-width: 1.6; transition: fill .2s; }
+.dg-dot.on .dg-dot-c { fill: #066174; }
+.dg-dot:hover .dg-dot-c { fill: #A8CBD5; }
+.dg-dot.on:hover .dg-dot-c { fill: #066174; }
+.dg-dot:focus-visible .dg-dot-c { stroke: #C8912E; stroke-width: 2.4; }
