@@ -8,6 +8,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/baterias-a-costo-cero/"/>
   </url>
   <url>
+    <loc>https://www.spec.cl/en/columnas/desempate-de-baterias/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/desempate-de-baterias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/desempate-de-baterias/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/desempate-de-baterias/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/en/columnas/redes-para-el-clima/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/redes-para-el-clima/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/redes-para-el-clima/"/>
@@ -198,6 +204,12 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/baterias-a-costo-cero/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/baterias-a-costo-cero/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/baterias-a-costo-cero/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/columnas/desempate-de-baterias/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/desempate-de-baterias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/desempate-de-baterias/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/desempate-de-baterias/"/>
   </url>
   <url>
     <loc>https://www.spec.cl/es/columnas/redes-para-el-clima/</loc>
@@ -438,5 +450,8 @@
   </url>
   <url>
     <loc>https://www.spec.cl/publicaciones/2026-almacenamiento-corta-duracion.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2026-degeneracion-desempate-bess.pdf</loc>
   </url>
 </urlset>
