@@ -18,18 +18,16 @@
 (function () {
   "use strict";
 
-  // La cola la define el snippet de Plausible, que es un <script> en linea y
-  // por lo tanto corre mientras se parsea el documento: para cuando este
-  // archivo (defer) registra el listener, `window.plausible` ya existe y
-  // encola lo que se dispare antes de que llegue el script async.
+  // `window.umami` lo define el script de Umami, que va antes que este en el
+  // documento: los dos son defer y corren en ese orden, asi que para cuando
+  // alguien pincha algo ya existe. Umami no trae cola, y no hace falta.
   //
-  // Aca solo se comprueba antes de llamar. Redefinir la cola seria peor que
-  // inutil: si el snippet no esta —bloqueador, o alguien lo saco del
-  // generador— nada la vaciaria nunca, y un arreglo creciendo en memoria
-  // simula que se esta midiendo cuando no se esta midiendo nada.
+  // Aca solo se comprueba antes de llamar. Si el script no esta —bloqueador,
+  // o alguien lo saco del generador— el clic simplemente no se cuenta, que
+  // es mejor que fingir una medicion que no ocurre.
   function registrar(evento, props) {
-    if (typeof window.plausible === "function") {
-      window.plausible(evento, { props: props });
+    if (window.umami && typeof window.umami.track === "function") {
+      window.umami.track(evento, props);
     }
   }
 
