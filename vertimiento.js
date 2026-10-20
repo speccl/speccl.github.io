@@ -10,18 +10,19 @@
   /* ============================================================
      Las dos series del hero, trimestre a trimestre desde 2021.
      [etiqueta, vertimiento solar+eolico GWh/trimestre, potencia BESS MW]
-     Sale de vertimiento_datos.py (VERTIMIENTO y BESS_MES) agregado por
-     trimestre. Solo van trimestres COMPLETOS: el ultimo dato consolidado
-     es julio de 2026, asi que la serie cierra en el segundo trimestre.
+     Sale de vertimiento_datos.py (VERTIMIENTO, PRELIMINAR y BESS_MES)
+     agregado por trimestre. Solo van trimestres COMPLETOS: el tercero de
+     2026 cierra con septiembre preliminar del Coordinador, y octubre, que va
+     a medias, no entra. La potencia es la del ultimo mes del trimestre.
      Para actualizarlo, recalcular y reemplazar el array.
      ============================================================ */
   var SERIE = [
     ["2021", 52, 0], [null, 7, 0], [null, 99, 0], [null, 301, 0],
     ["2022", 264, 0], [null, 135, 0], [null, 375, 0], [null, 697, 0],
-    ["2023", 458, 84], [null, 416, 199], [null, 619, 341], [null, 1207, 582],
-    ["2024", 1455, 666], [null, 582, 989], [null, 1138, 1118], [null, 2458, 1169],
-    ["2025", 1590, 1481], [null, 806, 1914], [null, 1320, 2353], [null, 2329, 2982],
-    ["2026", 1869, 4062], [null, 627, 5232]
+    ["2023", 458, 84], [null, 384, 206], [null, 619, 342], [null, 1207, 584],
+    ["2024", 1455, 972], [null, 592, 1407], [null, 1138, 1574], [null, 2458, 1660],
+    ["2025", 1590, 1990], [null, 806, 2488], [null, 1320, 3027], [null, 2329, 3336],
+    ["2026", 1869, 4380], [null, 627, 5551], [null, 1022, 7111]
   ];
   var C_VERT = "231,200,115";    // dorado: el vertimiento
   var C_BESS = "120,190,205";    // teal claro: la potencia de baterias
@@ -34,7 +35,7 @@
     var W = 0, H = 0, box = null, raf = null, t0 = 0;
 
     var TECHO_V = 2600;          // GWh por trimestre
-    var TECHO_B = 5600;          // MW
+    var TECHO_B = 7600;          // MW
 
     function resize() {
       W = cv.clientWidth; H = cv.clientHeight;
