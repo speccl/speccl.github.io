@@ -1,0 +1,47 @@
+/* ============================================================
+   COLUMNA «EL PLAZO ES UN PRÉSTAMO» — lo propio
+   Va después de columna.css y vertimiento.css; namespace .pp-*
+   ============================================================ */
+
+/* ---------- el dibujo del hero ----------
+   Las tres trayectorias de la tarifa regulada, 2027-2040, sin rótulos: bajan
+   lento y caen cuando vence la 2013/03 (la banda dorada). Ocupa el lugar del
+   dibujo de las otras columnas, a la derecha y bajo el velo; en angosto se
+   apaga, porque detrás del texto es trama sucia. El largo de cada trazo
+   (--len) y su retardo (--d) vienen calculados desde Python. */
+.pp-hero { position: absolute; z-index: 0; top: 50%; right: 3vw;
+           height: min(78%, 820px); width: auto; max-width: 50vw;
+           aspect-ratio: 800 / 640; transform: translateY(-50%);
+           pointer-events: none; overflow: hidden; }
+.pp-v { stroke: rgba(159, 186, 199, .10); stroke-width: 1;
+        animation: pp-fade 1s ease-out both .1s; }
+.pp-banda { fill: rgba(231, 200, 115, .07); stroke: rgba(231, 200, 115, .22);
+            stroke-width: 1; stroke-dasharray: 4 6;
+            animation: pp-fade 1.2s ease-out both .2s; }
+.pp-l { fill: none; stroke-linejoin: round; stroke-linecap: round;
+        stroke-dasharray: var(--len); stroke-dashoffset: var(--len);
+        animation: pp-trazo 1.6s cubic-bezier(.3,.6,.2,1) forwards var(--d); }
+.pp-l40 { stroke: rgba(120, 190, 205, .55); stroke-width: 2; }
+.pp-l60 { stroke: rgba(231, 200, 115, .55); stroke-width: 2; }
+.pp-l50 { stroke: #E7C873; stroke-width: 4;
+          filter: drop-shadow(0 0 10px rgba(231, 200, 115, .4)); }
+.pp-p { transform-box: fill-box; transform-origin: center;
+        animation: pp-pop .4s cubic-bezier(.2,.9,.3,1.4) both var(--d); }
+.pp-p40 { fill: rgba(120, 190, 205, .7); }
+.pp-p60 { fill: rgba(231, 200, 115, .6); }
+.pp-p50 { fill: #071828; stroke: #E7C873; stroke-width: 2.2; }
+@keyframes pp-fade  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pp-trazo { to { stroke-dashoffset: 0; } }
+@keyframes pp-pop   { from { opacity: 0; transform: scale(.2); }
+                      to   { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .pp-hero * { animation: none !important; stroke-dashoffset: 0 !important; }
+}
+@media (max-width: 900px) { .pp-hero { display: none; } }
+
+/* ---------- la presentación adjunta ----------
+   La tarjeta del cierre de columna.css, con el peso del archivo al lado del
+   botón: quien descarga en el teléfono quiere saberlo antes. */
+.pp-adjunto .co-btn { margin-right: 14px; }
+.pp-adjunto-meta { display: inline-block; font-size: 13px; letter-spacing: .04em;
+                   color: #9FBAC7; vertical-align: middle; }

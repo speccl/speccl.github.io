@@ -14,6 +14,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/desempate-de-baterias/"/>
   </url>
   <url>
+    <loc>https://www.spec.cl/en/columnas/el-plazo-es-un-prestamo/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/el-plazo-es-un-prestamo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/el-plazo-es-un-prestamo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/el-plazo-es-un-prestamo/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/en/columnas/redes-para-el-clima/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/redes-para-el-clima/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/redes-para-el-clima/"/>
@@ -210,6 +216,12 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/desempate-de-baterias/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/desempate-de-baterias/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/desempate-de-baterias/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/columnas/el-plazo-es-un-prestamo/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/el-plazo-es-un-prestamo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/el-plazo-es-un-prestamo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/el-plazo-es-un-prestamo/"/>
   </url>
   <url>
     <loc>https://www.spec.cl/es/columnas/redes-para-el-clima/</loc>
@@ -453,5 +465,8 @@
   </url>
   <url>
     <loc>https://www.spec.cl/publicaciones/2026-degeneracion-desempate-bess.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2026-ley21833-renegociacion-contratos.pdf</loc>
   </url>
 </urlset>
