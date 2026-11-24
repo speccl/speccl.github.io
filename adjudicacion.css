@@ -1,0 +1,43 @@
+/* ============================================================
+   COLUMNA «ADJUDICAR ES OPTIMIZAR» — lo propio
+   Va después de columna.css y vertimiento.css; namespace .ad-*
+   ============================================================ */
+
+/* ---------- el dibujo del hero ----------
+   El árbol de decisión del literal d) en adelante, sin rótulos: se dibuja de
+   la raíz a las hojas, columna por columna. Ocupa el lugar del dibujo de las
+   otras columnas, a la derecha y bajo el velo; en angosto se apaga, porque
+   detrás del texto es trama sucia. El largo de cada trazo (--len) y su
+   retardo (--d) vienen calculados desde Python (adjudicacion_art.hero). */
+.ad-hero { position: absolute; z-index: 0; top: 52%; right: 3vw;
+           width: min(44vw, 860px); height: auto;
+           aspect-ratio: 780 / 386; transform: translateY(-50%);
+           pointer-events: none; overflow: visible; }
+.ad-l { fill: none; stroke: rgba(120, 190, 205, .45); stroke-width: 1.6;
+        stroke-linejoin: round;
+        stroke-dasharray: var(--len); stroke-dashoffset: var(--len);
+        animation: ad-trazo 1s cubic-bezier(.3,.6,.2,1) forwards var(--d); }
+.ad-n { animation: ad-pop .5s cubic-bezier(.2,.9,.3,1.2) both var(--d);
+        transform-box: fill-box; transform-origin: center; }
+.ad-raiz { fill: rgba(231, 200, 115, .16); stroke: #E7C873; stroke-width: 1.6; }
+.ad-val  { fill: rgba(231, 200, 115, .10); stroke: rgba(231, 200, 115, .5); stroke-width: 1.2; }
+.ad-preg { fill: rgba(7, 24, 40, .6); stroke: rgba(120, 190, 205, .55); stroke-width: 1.2; }
+.ad-pe   { fill: #E7C873; filter: drop-shadow(0 0 10px rgba(231, 200, 115, .35)); }
+.ad-cb   { fill: rgba(159, 186, 199, .22); stroke: rgba(159, 186, 199, .5); stroke-width: 1.2; }
+@keyframes ad-trazo { to { stroke-dashoffset: 0; } }
+@keyframes ad-pop   { from { opacity: 0; transform: scale(.6); }
+                      to   { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .ad-hero * { animation: none !important; stroke-dashoffset: 0 !important; }
+}
+@media (max-width: 900px) { .ad-hero { display: none; } }
+
+/* ---------- la presentación adjunta ----------
+   La tarjeta del cierre de columna.css, con el peso del archivo al lado del
+   botón: quien descarga en el teléfono quiere saberlo antes. */
+.ad-adjunto .co-btn { margin-right: 14px; }
+.ad-adjunto-meta { display: inline-block; font-size: 13px; letter-spacing: .04em;
+                   color: #9FBAC7; vertical-align: middle; }
+
+/* el botón de línea del hero baja al árbol: que no quede pegado al borde */
+#f-arbol { scroll-margin-top: 96px; }

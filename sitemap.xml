@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.spec.cl/en/columnas/adjudicacion-de-ofertas-2026-01/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/adjudicacion-de-ofertas-2026-01/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/adjudicacion-de-ofertas-2026-01/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/adjudicacion-de-ofertas-2026-01/"/>
+  </url>
+  <url>
     <loc>https://www.spec.cl/en/columnas/baterias-a-costo-cero/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/baterias-a-costo-cero/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/baterias-a-costo-cero/"/>
@@ -204,6 +210,12 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/seguridad-de-informacion/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/seguridad-de-informacion/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/seguridad-de-informacion/"/>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/es/columnas/adjudicacion-de-ofertas-2026-01/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.spec.cl/es/columnas/adjudicacion-de-ofertas-2026-01/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.spec.cl/en/columnas/adjudicacion-de-ofertas-2026-01/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.spec.cl/es/columnas/adjudicacion-de-ofertas-2026-01/"/>
   </url>
   <url>
     <loc>https://www.spec.cl/es/columnas/baterias-a-costo-cero/</loc>
@@ -468,5 +480,8 @@
   </url>
   <url>
     <loc>https://www.spec.cl/publicaciones/2026-ley21833-renegociacion-contratos.pdf</loc>
+  </url>
+  <url>
+    <loc>https://www.spec.cl/publicaciones/2026-licitacion-2026-01-herramienta-adjudicacion.pdf</loc>
   </url>
 </urlset>
