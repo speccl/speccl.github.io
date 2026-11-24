@@ -5,6 +5,9 @@
  * pagina salio cada consulta. Este archivo registra un evento "Contacto" con
  * la pagina de origen, la zona del enlace y el asunto que llevaba.
  *
+ * Tambien registra "Suscripcion" —pagina y zona— cuando alguien pincha un
+ * enlace a suscribete.spec.cl, el formulario de los correos.
+ *
  * Va DELEGADO en document, a proposito. Las paginas del espejo son un build
  * de Next ya compilado: cualquier nodo que se inyecte se pierde al hidratar y
  * mutar el DOM antes de que React termine rompe la hidratacion (#418).
@@ -52,15 +55,28 @@
     }
   }
 
+  // Los enlaces a suscribete.spec.cl. Ese formulario no sabe de donde llega
+  // cada persona —a proposito no se le pasa nada en la URL—, asi que este
+  // evento es la unica forma de saber si suscribe mas el pie o la banda.
+  var SUSCRIBETE = /^https:\/\/suscribete\.spec\.cl(\/|$)/;
+
   document.addEventListener("click", function (e) {
     var t = e.target;
     if (!t || typeof t.closest !== "function") return;
-    var a = t.closest('a[href^="mailto:"]');
+    var a = t.closest("a[href]");
     if (!a) return;
+    var href = a.getAttribute("href") || "";
 
     // Sin barra final: /es/quienes-somos/ y /es/quienes-somos son la misma
     // pagina, y Amplify sirve las dos. Separarlas partiria el informe en dos.
     var pagina = location.pathname.replace(/\/+$/, "") || "/";
+
+    // la banda es un <aside> fuera del pie: cae en "cta"
+    if (SUSCRIBETE.test(href)) {
+      registrar("Suscripcion", { pagina: pagina, origen: zona(a) });
+      return;
+    }
+    if (href.indexOf("mailto:") !== 0) return;
 
     registrar("Contacto", {
       pagina: pagina,

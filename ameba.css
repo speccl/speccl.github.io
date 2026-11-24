@@ -575,3 +575,34 @@
 .am-figscroll::-webkit-scrollbar-thumb,
 .am-browser-body::-webkit-scrollbar-thumb { background: rgba(231,200,115,.55); border-radius: 3px; }
 .am-figscroll, .am-browser-body { scrollbar-width: thin; scrollbar-color: rgba(231,200,115,.55) rgba(255,255,255,.09); }
+
+/* ---------- suscripcion a los correos (ameba.banda_suscripcion) ----------
+   Banda entre el contenido y el pie de las columnas y de /publicaciones.
+   Celeste palido y no oscura: pegada al pie #071828 se fundiria con el.
+   Es un enlace a suscribete.spec.cl y nada mas: el formulario vive alla. */
+.sus-banda { background: var(--am-pale); color: var(--am-ink); padding: 56px 20px;
+             font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif; }
+@media (min-width: 640px)  { .sus-banda { padding-left: var(--smpx-section); padding-right: var(--smpx-section); } }
+@media (min-width: 1024px) { .sus-banda { padding: 64px var(--lgpx-section); } }
+@media (min-width: 1536px) { .sus-banda { padding-left: var(--2xlpx-section); padding-right: var(--2xlpx-section); } }
+.sus-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+          gap: 28px 48px; max-width: 1200px; margin-inline: auto; }
+.sus-txt { flex: 1 1 420px; min-width: 0; }
+.sus-rotulo { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 14px;
+              color: var(--am-teal); font-size: 12px; font-weight: 700;
+              letter-spacing: .13em; text-transform: uppercase; }
+.sus-rotulo i { width: 22px; height: 2px; border-radius: 1px; background: var(--am-gold); }
+.sus-h { margin: 0 0 10px; font-size: 28px; line-height: 1.25; font-weight: 700;
+         letter-spacing: -.01em; max-width: 30ch; text-wrap: balance; }
+.sus-bajada { margin: 0; font-size: 16px; line-height: 1.6; color: #3d5563; }
+.sus-btn { display: inline-flex; align-items: center; gap: 10px; flex: none;
+           padding: 15px 28px; border-radius: 10px; background: var(--am-teal); color: #fff;
+           font-weight: 700; line-height: 1.2; text-decoration: none;
+           transition: transform .25s ease, background-color .25s; }
+.sus-btn:hover { background: var(--am-teal-d3); transform: translateY(-2px); }
+.sus-btn:focus-visible { outline: 3px solid var(--am-gold); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .sus-btn, .sus-btn:hover { transition: none; transform: none; } }
+@media (max-width: 639px) {
+  .sus-h { font-size: 23px; }
+  .sus-btn { width: 100%; justify-content: center; }
+}
